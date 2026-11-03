@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>פיזיולוגיה קרדיווסקולרית – מדריך לבוחן</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1d2430;--muted:#5c6673;--line:#e2ddd3;--accent:#9b2226;--accent2:#1f5f8b;--en:#1f5f8b;
+ --key:#c1121f;--mem:#9a5b00;--memb:#fff6e5;--elec:#e76f51;--mech:#2a9d8f;--vess:#4361ee;--ctrl:#7b2cbf;--ecg:#bc4749;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI","Helvetica Neue",Arial,"Noto Sans Hebrew",sans-serif;font-size:16px;line-height:1.6}
+.top{position:sticky;top:0;z-index:20;background:#fffdf9;border-bottom:1px solid var(--line);padding:10px 16px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.top h1{font-size:20px;margin:0 0 6px}
+.top h1 small{font-weight:400;color:var(--muted);font-size:14px;margin-inline-start:8px}
+.nav{display:flex;flex-wrap:wrap;gap:6px}
+.nav a{text-decoration:none;color:var(--accent2);background:#fff;border:1px solid var(--line);border-radius:6px;padding:2px 9px;font-size:13.5px;white-space:nowrap}
+.nav a:hover{border-color:var(--accent2)}
+.nav a.quiz{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+main{max-width:1180px;margin:0 auto;padding:16px}
+section{margin:0 0 44px;scroll-margin-top:120px}
+h2{font-size:24px;border-bottom:3px solid var(--c,var(--accent));padding-bottom:6px;margin:10px 0 14px}
+h2 .en{font-size:17px;font-weight:400;color:var(--muted)}
+h3{font-size:19px;margin:24px 0 8px;color:#153b57;border-inline-start:5px solid var(--c,var(--accent));padding-inline-start:10px}
+h4{margin:12px 0 6px;font-size:16px}
+p{margin:6px 0}
+ul,ol{margin:6px 0;padding-inline-start:22px}
+li{margin:3px 0}
+.en{direction:ltr;unicode-bidi:isolate;font-style:normal;color:var(--en);font-weight:600;font-family:"Segoe UI",Arial,sans-serif}
+.en.plain{font-weight:400;color:inherit}
+.f{direction:ltr;unicode-bidi:isolate;font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;font-size:1.05em;font-style:italic;color:#153b57}
+.key{display:inline-block;font-size:11px;background:var(--key);color:#fff;border-radius:999px;padding:0 7px;margin-inline-start:6px;vertical-align:middle;font-weight:700;font-style:normal}
+.box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0}
+.box.intro{background:#eef5fa;border-color:#cfe0ec}
+.box h4:first-child{margin-top:0}
+.mem{background:var(--memb);border:1px solid #f0d9b4;border-radius:10px;padding:10px 14px;margin:10px 0;font-size:15px}
+.mem::before{content:"💡 דרך לזכור: ";color:var(--mem);font-weight:700}
+.warn{background:#fdecec;border:1px solid #f3bcbc;border-radius:10px;padding:10px 14px;margin:10px 0;font-size:15px}
+.warn::before{content:"⚠ מלכודת בבוחן: ";color:var(--key);font-weight:700}
+.quizref{background:#eef7f1;border:1px solid #bfe0cc;border-radius:10px;padding:10px 14px;margin:10px 0;font-size:15px}
+.quizref::before{content:"📝 נשאל בבוחן: ";color:#1b7a44;font-weight:700}
+.formula{background:#fff;border:2px dashed var(--accent2);border-radius:10px;padding:8px 14px;margin:10px 0;text-align:center;font-size:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+table{border-collapse:collapse;width:100%;background:#fff;margin:8px 0;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:#f1ede4}
+tr:nth-child(even) td{background:#fcfbf8}
+td.up{color:#1b7a44;font-weight:700}td.down{color:var(--key);font-weight:700}td.same{color:var(--muted)}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:12px 0}
+.fig{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px;display:flex;flex-direction:column}
+.fig img{width:100%;height:200px;object-fit:contain;border-radius:6px;cursor:zoom-in;background:#fff}
+.fig.tall img{height:280px}
+.fig.wide{grid-column:1/-1}
+.fig.wide img{height:auto;max-height:520px}
+.fig figcaption{font-size:13px;color:var(--muted);line-height:1.45;padding:7px 4px 2px}
+.fig figcaption b{color:var(--ink)}
+.credit{font-size:11px;color:#9aa3ad;display:block;margin-top:3px}
+.diagram{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;margin:12px 0}
+.diagram svg{width:100%;height:auto;display:block;direction:ltr}
+.diagram .cap{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+.steps{counter-reset:st;display:grid;grid-template-columns:1fr;gap:10px}
+.st{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;border-inline-start:6px solid var(--c,#999)}
+.st h4{margin:0 0 4px;font-size:17px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.st h4::before{counter-increment:st;content:counter(st);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--c,#999);color:#fff;font-size:14px;font-weight:700}
+.st .tag{font-size:13px;color:var(--muted);background:#f3f1ec;border-radius:999px;padding:1px 9px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0}
+.chain span{background:#fff;border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:14px}
+.chain span.hl{background:#fde8e8;border-color:var(--key)}
+.chain span.g{background:#e6f4f1;border-color:var(--mech)}
+.chain i{color:var(--muted);font-style:normal}
+.pill{display:inline-block;border-radius:999px;padding:1px 10px;font-size:13px;color:#fff;background:var(--c,#999)}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600;font-size:16px}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:10px 18px;border-radius:10px;font-weight:600;margin:8px 0}
+.toc{columns:2;column-gap:24px;font-size:15px}
+@media (max-width:700px){.toc{columns:1}}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out;flex-direction:column;padding:16px}
+#lb img{max-width:96vw;max-height:84vh;border-radius:6px;background:#fff}
+#lb div{color:#fff;font-size:14px;margin-top:10px;max-width:900px;text-align:center}
+@media print{.top{position:static}.fig img{height:auto}#lb{display:none!important}section{break-inside:avoid-page}}
+</style>
+</head>
+<body>
+<div class="top">
+ <h1>פיזיולוגיה קרדיווסקולרית <small>מדריך לבוחן 05.11 · יחידות 1–3 · פרופ' בן אסא · Guyton &amp; Hall פרקים 9–20</small></h1>
+ <nav class="nav">
+  <a href="#big">תמונה גדולה</a>
+  <a href="#elec">חשמל: קוצבים ו-AP</a>
+  <a href="#ecg">אק"ג</a>
+  <a href="#cycle">מחזור הלב וקולות</a>
+  <a href="#mech">Preload / Afterload / Inotropy</a>
+  <a href="#pv">PV Loop ופרנק-סטרלינג</a>
+  <a href="#vess">כלי דם והמודינמיקה</a>
+  <a href="#cap">נימים וכוחות סטרלינג</a>
+  <a href="#ans">בקרה עצבית ורפלקסים</a>
+  <a href="#sv">בקרה על HR ו-SV</a>
+  <a href="#clinic">קליניקה</a>
+  <a href="#formulas">דף נוסחאות</a>
+  <a href="#mems">כל הטריקים</a>
+  <a href="quiz.html" class="quiz">תרגול · שאלות</a>
+ </nav>
+</div>
+
+<main>
+
+<div class="box intro">
+ <p><b>איך לקרוא את הדף:</b> ההסברים בעברית; מונחים מקצועיים מופיעים באנגלית <i class="en">(כך)</i> כי כך הם מופיעים בבוחן ובספר. מושג שסומן ב-<span class="key">חובה</span> הודגש בקו תחתון ברשימת המושגים של הקורס. קופסאות <b>📝 נשאל בבוחן</b> מצביעות על שאלה שהופיעה בבוחן הבוקר או בבוחן 1 מהשנה שעברה, וקופסאות <b>⚠ מלכודת</b> על מסיחים שחוזרים בשאלות.</p>
+ <p>הדף בנוי כמו ההרצאות: קודם <b>החשמל</b> (למה הלב פועם ומאיפה מתחיל הגירוי), אחר כך <b>המכניקה</b> (מה קובע כמה דם יוצא בכל פעימה), אחר כך <b>כלי הדם</b> (לחץ, זרימה, התנגדות וחילוף חומרים בנימים), ולבסוף <b>הבקרה</b> (איך מערכת העצבים וההורמונים מכוונים את כל זה). לחיצה על תמונה פותחת אותה בגדול.</p>
+</div>
+
+<!-- ============================================================ -->
+<section id="big">
+<h2>1. התמונה הגדולה <span class="en">Overview</span></h2>
+
+<div class="grid2">
+ <div class="box">
+  <h4>הלב כמשאבת דחיסה פעימתית</h4>
+  <ul>
+   <li><b>שתי משאבות בטור</b> באיבר אחד: לב ימין דוחף למחזור הקטן (ריאות), לב שמאל למחזור הגדול. המחיצה מפרידה, המסתמים מבטיחים <b>זרימה חד-כיוונית</b>.</li>
+   <li>מסתמי עלייה-חדר: <i class="en">Tricuspid</i> (ימין), <i class="en">Mitral / Bicuspid</i> (שמאל). מסתמי עורקים: <i class="en">Pulmonary</i> ו-<i class="en">Aortic</i>.</li>
+   <li>שריר הלב: שריר "איטי", אירובי, עשיר במיטוכונדריה, תלות מוחלטת בחמצן (כלי דם כליליים). <i class="en">Intercalated disks</i> ו-<i class="en">Gap junctions</i> מסנכרנים הולכה וכיווץ – הלב מתפקד כ-<i class="en">functional syncytium</i>.</li>
+   <li>הפעילות נקבעת בשלוש רמות: <b>תא</b> (תעלות יונים, סידן), <b>איבר</b> (פרנק-סטרלינג, PV loop), <b>מערכת</b> (כלי דם, רפלקסים, הורמונים).</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4>מספרים שכדאי לזכור</h4>
+  <table>
+   <tr><td>קצב <i class="en">SA node</i></td><td>~70 פעימות/דקה (סינוס תקין 60–100)</td></tr>
+   <tr><td>קצב <i class="en">AV node</i> (קוצב משני)</td><td>~50 פעימות/דקה</td></tr>
+   <tr><td>מהירות הולכה: עליות / AVN / SAN</td><td>0.02–0.1 מ'/שנ' (איטי)</td></tr>
+   <tr><td>מהירות הולכה: <i class="en">His–Purkinje</i></td><td>1–4 מ'/שנ' (מהיר)</td></tr>
+   <tr><td>פוטנציאל מנוחה: תא מהיר / תא איטי</td><td>‎−90 mV‎ / ‎−60 mV‎ (לא יציב)</td></tr>
+   <tr><td><i class="en">SV</i> במנוחה</td><td>~70 מ"ל (EDV ~120–130, ESV ~50)</td></tr>
+   <tr><td><i class="en">EF</i> תקין</td><td>~60% (55–70%)</td></tr>
+   <tr><td><i class="en">CO</i> במנוחה</td><td>5–6 ליטר/דקה; במאמץ עד ~20–25</td></tr>
+   <tr><td>לחץ עורקי: סיסטולי / דיאסטולי / MAP</td><td>120 / 80 / ~93 mmHg</td></tr>
+   <tr><td>PR תקין / QRS / QTc</td><td>0.12–0.20 ש' / ‎&lt;0.12 ש'‎ / ≤0.40 ש'</td></tr>
+   <tr><td>כוחות סטרלינג (מהמצגת)</td><td>Pc: 35 → 15 mmHg לאורך הנימה; πc ≈ 25 mmHg</td></tr>
+   <tr><td>נפח דם בוורידים</td><td>~67% (כלי קיבולת); נימים ~5%</td></tr>
+  </table>
+ </div>
+</div>
+
+<div class="box">
+ <h4>שלושת המשוואות שמחזיקות את כל היחידה</h4>
+ <div class="grid3">
+  <div class="formula"><span class="f">CO = SV × HR</span><br><small>תפוקת הלב = נפח פעימה × קצב</small></div>
+  <div class="formula"><span class="f">SV = EDV − ESV</span><br><small>ו-<span class="f">EF = SV / EDV</span></small></div>
+  <div class="formula"><span class="f">Flow = ΔP / R</span><br><small>ולכן <span class="f">MAP ≈ CO × TPR</span></small></div>
+ </div>
+ <p>כל שאלה ביחידה מתחברת לאחת מהן: מה משנה את SV (preload, afterload, contractility)? מה משנה את HR (קוצב + אוטונומי)? ומה משנה את ההתנגדות (רדיוס העורקיקים בחזקת 4)?</p>
+</div>
+
+<div class="mem">שלושת הגורמים ל-SV: <b>P-A-C</b> – <i class="en">Preload</i> (מילוי), <i class="en">Afterload</i> (התנגדות), <i class="en">Contractility</i> (כיווציות). ↑P ↑C מגדילים SV; ↑A מקטין.</div>
+</section>
+<!-- ============================================================ -->
+<section id="elec" style="--c:var(--elec)">
+<h2>2. התכונות החשמליות של הלב <span class="en">Electrical Properties</span></h2>
+
+<div class="box intro">
+ <p><b>השאלה המרכזית של היחידה:</b> איך הלב שומר על אופי <b>פעימתי</b> (ולא כיווץ רציף כמו שריר שלד), ומה קובע את <b>הכיווניות</b> (עליות לפני חדרים)? התשובה: פוטנציאל פעולה ארוך במיוחד עם תקופה רפרקטורית שחופפת לכיווץ, ומערכת הולכה שמפיצה את הגירוי בסדר קבוע.</p>
+</div>
+
+<h3>2.1 מערכת ההולכה: מי מתחיל, מי מעכב, מי מפיץ</h3>
+<div class="chain">
+ <span class="hl"><i class="en">SA node</i> – הקוצב הראשי (~70/דקה)</span><i>←</i>
+ <span>שריר העליות (הולכה איטית)</span><i>←</i>
+ <span class="hl"><i class="en">AV node</i> – השהיה (~0.1 ש'), קוצב משני (~50/דקה)</span><i>←</i>
+ <span class="g"><i class="en">Bundle of His</i></span><i>←</i>
+ <span class="g"><i class="en">Bundle branches</i> (ימין/שמאל)</span><i>←</i>
+ <span class="g"><i class="en">Purkinje fibers</i> (1–4 מ'/שנ')</span><i>←</i>
+ <span>שריר החדרים</span>
+</div>
+<div class="grid2">
+ <div class="box">
+  <h4><i class="en">SA node (Sinoatrial node)</i> <span class="key">חובה</span></h4>
+  <ul>
+   <li>בדופן העלייה הימנית ליד כניסת ה-<i class="en">SVC</i>. תאי קוצב "איטיים" עם <b>אוטומטיות</b>: אין להם פוטנציאל מנוחה יציב, הם מתדפלרזים לבד.</li>
+   <li>הוא הקוצב הדומיננטי כי הוא <b>המהיר ביותר</b> (~70/דקה) – מי שמגיע לסף ראשון "משתלט" ומאפס את כל השאר (<i class="en">overdrive suppression</i>).</li>
+   <li>פועל ללא תלות במערכת העצבים; האוטונומי רק <b>מכוון</b> את הקצב (כרונוטרופיה).</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4><i class="en">AV node (Atrioventricular node)</i> <span class="key">חובה</span></h4>
+  <ul>
+   <li>העליות מופרדות מהחדרים ע"י <b>רקמת חיבור צפופה</b> (טבעת פיברוטית) שיוצרת <b>ניתוק חשמלי</b>. ה-AVN הוא <b>המעבר היחיד</b> לגירוי מהעליות לחדרים.</li>
+   <li>הולכה <b>איטית</b> (0.02–0.1 מ'/שנ') – יוצרת <b>השהיה</b> (~0.1 ש' = מקטע PR) שמאפשרת לעליות לסיים להתכווץ ולמלא את החדרים לפני שהחדרים מתכווצים.</li>
+   <li>קוצב משני (~50/דקה): אם ה-SAN נכשל, ה-AVN מקבל פיקוד. גם מגן על החדרים: בפרפור עליות הוא "מסנן" חלק מהגירויים.</li>
+  </ul>
+ </div>
+</div>
+<div class="box">
+ <h4><i class="en">Bundle of His / Purkinje fibers</i></h4>
+ <ul>
+  <li>רקמת הולכה מתמחה: תאים גדולים, מעט מיופיברילים, הרבה <i class="en">gap junctions</i> – <b>ההולכה המהירה ביותר בלב</b> (1–4 מ'/שנ'; להשוואה שריר שלד 0.3–1).</li>
+  <li>המטרה: להפיץ את הגירוי לכל שריר החדרים כמעט <b>בו-זמנית</b>, מהקודקוד (apex) כלפי מעלה – כך הדם נדחף לעבר מסתמי העורקים.</li>
+  <li>דה-פולריזציה: מהאנדוקרד לאפיקרד, מהמחיצה לדפנות. רה-פולריזציה: מהדפנות (אפיקרד) למחיצה – ולכן גל T חיובי כמו QRS.</li>
+ </ul>
+</div>
+<div class="quizref">"מסלול ההולכה החשמלית בלב מאפשר תזמון ופיזור נכון של פוטנציאל הפעולה" – הסדר הנכון: <i class="en">SA node → AV node → Bundle of His → Purkinje fibers</i>. המסיחים הנפוצים: "SA node הוא הקוצב המשני" (לא – הראשי), "סיבי פורקיניה הם צרורות הולכה איטית בין SAN ל-AVN" (לא – הולכה מהירה בחדרים), "צרור היס מעביר מה-SAN לעליות" (לא – מה-AVN לחדרים). <b>נכון:</b> ה-AV node הוא הקוצב המשני, ההולכה בו איטית והוא מאפשר השהיה בין כיווץ העליות לכיווץ החדרים.</div>
+
+<div class="figs">
+ <figure class="fig tall"><img src="img/conduction-system.jpg" alt="conduction system" onclick="lb(this)"><figcaption><b>מערכת ההולכה.</b> SAN בעלייה הימנית, AVN במחיצה הבין-עלייתית התחתונה, צרור היס, הסתעפויות ימין ושמאל, סיבי פורקיניה.<span class="credit">מצגת הקורס (Berne &amp; Levy)</span></figcaption></figure>
+ <figure class="fig tall"><img src="img/conduction-nodes.jpg" alt="nodes" onclick="lb(this)"><figcaption><b>הגירוי בעליות מתפשט בכל הכיוונים</b> (אדום) ומוצא מעבר יחיד – ה-AV node.</figcaption></figure>
+ <figure class="fig tall"><img src="img/ap-regions-ecg.jpg" alt="AP per region" onclick="lb(this)"><figcaption><b>צורת ה-AP בכל אזור</b> והקשר לאק"ג: SAN ו-AVN – פוטנציאל איטי; פורקיניה ושריר חדרים – מהיר עם plateau ארוך.</figcaption></figure>
+</div>
+
+<h3>2.2 פוטנציאל פעולה: למה הלב לא יכול להיכנס לטטנוס</h3>
+<div class="grid2">
+ <div class="box">
+  <h4>ניסוי 1 מההרצאה: שריר שלד מול שריר לב</h4>
+  <ul>
+   <li><b>שריר שלד:</b> AP קצר מאוד (~2 ms) לעומת הכיווץ (~100 ms) → אפשר לתת סדרת גירויים ולקבל <b>סכימה</b> וטטנוס.</li>
+   <li><b>שריר לב:</b> AP ארוך במיוחד (~250–300 ms) ש<b>חופף</b> לכיווץ. התקופה הרפרקטורית נמשכת כמעט עד סוף הכיווץ → <b>אי אפשר</b> לסכם כיווצים; הלב חייב להירפות ולהתמלא בין פעימות.</li>
+   <li>מסקנה: ה-AP של הלב "בנוי" כדי לשמור על אופי פעימתי, ולכן יש לו מנגנון תעלות יונים שונה (plateau של סידן).</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4>מושגי יסוד <span class="key">חובה</span></h4>
+  <ul>
+   <li><b><i class="en">Action potential (AP)</i></b> – שינוי חולף ומתפשט בפוטנציאל הממברנה בתגובה לגירוי שמגיע לסף.</li>
+   <li><b><i class="en">Depolarization</i></b> – הפוטנציאל נעשה חיובי יותר (כניסת Na⁺ או Ca²⁺). <b><i class="en">Repolarization</i></b> – חזרה לשלילי (יציאת K⁺).</li>
+   <li><b><i class="en">Overshoot</i></b> – היפוך הפוטנציאל לערכים חיוביים (+20 mV) בשיא שלב 0.</li>
+   <li><b>תעלות תלויות מתח</b> <i class="en">(Voltage-gated)</i> – נפתחות/נסגרות לפי פוטנציאל הממברנה; לתעלת ה-Na⁺ המהירה יש שני שערים: אקטיבציה (נפתח מהר) ואינאקטיבציה (נסגר ומחזיק את התעלה חסומה עד הרה-פולריזציה).</li>
+  </ul>
+ </div>
+</div>
+
+<h3>2.3 תאים מהירים מול תאים איטיים <span class="key">חובה</span></h3>
+<p>בלב שני סוגי AP, שני סוגי תאים: <b>תאים "מהירים"</b> (<i class="en">Fast response</i>) – קרדיומיוציטים של העליות והחדרים וסיבי פורקיניה; <b>תאים "איטיים"</b> (<i class="en">Slow response</i>) – תאי הקוצב ב-SAN וב-AVN. ההבדל הוא <b>בתלילות שלב 0</b> (upstroke) ובמנגנון שלו.</p>
+
+<div class="figs">
+ <figure class="fig"><img src="img/quiz-ap-fast.jpg" alt="fast response" onclick="lb(this)"><figcaption><b>A – Fast response</b> (האיור מבוחן 1): שלבים 0–4. מנוחה יציבה ב-‎−90 mV‎, עלייה תלולה, plateau ברור.<span class="credit">בוחן 1 – מערכת קרדיווסקולרית</span></figcaption></figure>
+ <figure class="fig"><img src="img/quiz-ap-slow.jpg" alt="slow response" onclick="lb(this)"><figcaption><b>B – Slow response</b> (האיור מבוחן 1): אין שלב 1 ואין plateau, שלב 4 עולה לאט (pacemaker potential), מתחיל מ-‎−60 mV‎.</figcaption></figure>
+ <figure class="fig"><img src="img/ap-fast-phases.jpg" alt="fast phases" onclick="lb(this)"><figcaption><b>AP מהיר עם ERP ו-RRP.</b> a: שתי אלקטרודות מחוץ לתא; b: אלקטרודה הוכנסה לתא (הקטע b–c = פוטנציאל המנוחה); c: גירוי; c–d = ERP; d–e = RRP.</figcaption></figure>
+ <figure class="fig"><img src="img/ap-slow-phases.jpg" alt="slow phases" onclick="lb(this)"><figcaption><b>AP איטי.</b> ה-RRP "חודר" עמוק לתוך שלב 4 – ולכן תאי הקוצב מוגנים מגירוי חוזר מוקדם ומוליכים לאט.</figcaption></figure>
+ <figure class="fig"><img src="img/ap-san-vs-ventricle.jpg" alt="SAN vs ventricle" onclick="lb(this)"><figcaption><b>קשר בזמן:</b> ל-SAN (צהוב) אין פוטנציאל מנוחה יציב – הוא "זוחל" לסף ויורה; סיב חדרי (סגול) מחכה לגירוי.</figcaption></figure>
+ <figure class="fig"><img src="img/ap-fast-vs-slow.jpg" alt="fast vs slow" onclick="lb(this)"><figcaption><b>השוואה משקף ההרצאה:</b> שימו לב לסקאלה – המהיר מגיע ל-+20, האיטי בקושי עובר את 0.</figcaption></figure>
+</div>
+
+<table>
+ <tr><th>שלב</th><th>תא מהיר (מיוציט / פורקיניה)</th><th>תא איטי (SAN / AVN)</th></tr>
+ <tr><td><b>4</b> – מנוחה</td><td>פוטנציאל מנוחה <b>יציב</b> ‎−90 mV‎, נקבע ע"י מוליכות K⁺ (I<sub>K1</sub>). מחכה לגירוי.</td><td><b>לא יציב</b>, מתחיל ב-‎−60/−65 mV‎ ועולה לאט = <b><i class="en">Pacemaker potential</i></b>. מופעל ע"י <b>I<sub>f</sub></b> (נתרן נכנס) שנפתח בהיפרפולריזציה (~‎−55 mV‎), בהמשך תעלות Ca²⁺ מסוג T. I<sub>K</sub> דועך.</td></tr>
+ <tr><td><b>0</b> – דה-פולריזציה</td><td><b>תלולה</b>: פתיחת תעלות <b>Na⁺ מהירות</b> תלויות מתח (I<sub>Na</sub>), overshoot ל-+20 mV. זהה לעצב.</td><td><b>איטית</b>: אין תעלות Na⁺ מהירות (הן באינאקטיבציה קבועה בפוטנציאל כזה). הדה-פולריזציה ע"י <b>Ca²⁺</b> דרך תעלות L (I<sub>Ca</sub>).</td></tr>
+ <tr><td><b>1</b> – רה-פול' קצרה</td><td>סגירת Na⁺ (אינאקטיבציה) + זרם K⁺ חולף החוצה (<b>I<sub>to</sub></b>, transient outward).</td><td><b>אין</b> שלב 1.</td></tr>
+ <tr><td><b>2</b> – plateau</td><td>איזון: <b>Ca²⁺ נכנס</b> (תעלות L) מול <b>K⁺ יוצא</b> (I<sub>K</sub>). הסידן הזה הוא הטריגר לכיווץ. ה-plateau הוא מה שמאריך את ה-AP ומונע טטנוס.</td><td><b>אין</b> plateau אמיתי.</td></tr>
+ <tr><td><b>3</b> – רה-פולריזציה</td><td>אינאקטיבציה של תעלות Ca²⁺; I<sub>K</sub> &gt; I<sub>Ca</sub> → חזרה ל-‎−90‎.</td><td>I<sub>K</sub> גובר על I<sub>Ca</sub> → חזרה ל-‎−65‎, ואז I<sub>f</sub> מתחיל מחדש.</td></tr>
+ <tr><td>מהירות הולכה</td><td>מהירה (0.3–4 מ'/שנ')</td><td>איטית (0.02–0.1 מ'/שנ') – בגלל upstroke איטי</td></tr>
+ <tr><td>תקופה רפרקטורית</td><td>ERP עד אמצע שלב 3, RRP עד תחילת שלב 4</td><td>ארוכה במיוחד; RRP נמשך לתוך שלב 4</td></tr>
+</table>
+
+<div class="quizref">"מוליכות של איזה יון דומיננטית במהלך שלב 0 (דה-פולריזציה) באיור?" – ב-<b>Fast response</b> התשובה <b>נתרן</b>; ב-<b>Slow response</b> התשובה <b>סידן</b>. שתי השאלות הופיעו בבוחן 1 עם אותם איורים.</div>
+<div class="mem">תא <b>מהיר</b> = <b>Na</b>trium מהיר. תא <b>איטי</b> = <b>Ca</b>lcium זוחל. ה-plateau בתא המהיר הוא "משיכת חבל" בין Ca²⁺ שנכנס ל-K⁺ שיוצא – כשהסידן מתעייף, האשלגן מנצח ומגיעה רה-פולריזציה.</div>
+
+<div class="figs">
+ <figure class="fig wide"><img src="img/ion-channels-fast.jpg" alt="ion channels" onclick="lb(this)"><figcaption><b>סיכום תעלות היונים בתא מהיר</b> לפי שלבי ה-AP: 0 – Na⁺ מהיר; 1 – K⁺ (I<sub>to</sub>); 2 – Ca²⁺ נכנס + K⁺ יוצא; 3 – K⁺ (I<sub>K</sub>, I<sub>K1</sub>); 4 – K⁺ קובע את המנוחה. חץ אדום = כוח כימי, כחול = כוח חשמלי.<span class="credit">Koeppen &amp; Stanton, Berne &amp; Levy Physiology, 6th ed.</span></figcaption></figure>
+ <figure class="fig tall"><img src="img/pacemaker-currents.jpg" alt="pacemaker currents" onclick="lb(this)"><figcaption><b>הזרמים בתא קוצב.</b> כש-I<sub>K</sub> &gt; I<sub>f</sub> – רה-פולריזציה; I<sub>K</sub> = I<sub>f</sub> – "מנוחה" ב-‎−65‎; I<sub>f</sub> &gt; I<sub>K</sub> – דה-פולריזציה איטית; בסף מתחיל I<sub>Ca</sub>.</figcaption></figure>
+</div>
+
+<div class="grid2">
+ <div class="box">
+  <h4>הזרם ה"מצחיק" <i class="en">(Funny current, I<sub>f</sub>)</i></h4>
+  <ul>
+   <li>זרם נתרן (ומעט אשלגן) <b>נכנס</b> דרך תעלות HCN שנפתחות דווקא ב<b>היפרפולריזציה</b> (~‎−55 mV‎) – "מצחיק" כי כל תעלה אחרת נפתחת בדה-פולריזציה.</li>
+   <li>הוא שמניע את הזחילה האיטית של שלב 4 בתאי קוצב, ולכן קובע <b>כמה מהר מגיעים לסף</b> = קצב הלב.</li>
+   <li>סימפתטי (cAMP) <b>מגביר</b> I<sub>f</sub>; פרה-סימפתטי <b>מדכא</b> אותו.</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4>אוטומטיות <i class="en">(Automaticity)</i></h4>
+  <ul>
+   <li>היכולת של תא לייצר AP בעצמו, ללא גירוי חיצוני. קיימת ב-SAN, AVN ובמערכת His–Purkinje (קוצבים "רדומים": 30–40/דקה).</li>
+   <li>היררכיה: הקוצב המהיר ביותר שולט. אם ה-SAN מאט או נכשל – ה-AVN (50) משתלט, ואם גם הוא נכשל – פורקיניה (30–40).</li>
+   <li>בעליות ובחדרים אין אוטומטיות במצב תקין – בפתולוגיה (איסכמיה) יכולים להופיע מוקדים אקטופיים.</li>
+  </ul>
+ </div>
+</div>
+
+<h3>2.4 תקופה רפרקטורית <i class="en">(Refractory Period)</i> <span class="key">חובה</span></h3>
+<div class="grid2">
+ <div class="box">
+  <h4><i class="en">ERP – Effective (absolute) Refractory Period</i></h4>
+  <ul>
+   <li>משלב 0 ועד אמצע שלב 3 (קטע c–d באיור). <b>שום גירוי</b>, חזק ככל שיהיה, לא יוצר AP חדש.</li>
+   <li>הסיבה: שערי האינאקטיבציה של תעלות ה-Na⁺ סגורים ולא "מתאפסים" עד שהממברנה חוזרת לכ-‎−50 mV‎. <b>מהירות מיתוג השערים קובעת את ה-ERP</b>.</li>
+   <li>משמעות: ה-ERP חופף לרוב הכיווץ → <b>אין סכימה, אין טטנוס</b>, הלב חייב להירפות לפני הפעימה הבאה.</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4><i class="en">RRP – Relative Refractory Period</i></h4>
+  <ul>
+   <li>מסוף ה-ERP עד תחילת שלב 4 (קטע d–e). גירוי <b>חזק מהרגיל</b> יכול ליצור AP, אבל קטן ואיטי יותר (רק חלק מתעלות ה-Na⁺ התאוששו).</li>
+   <li><b>מהירות שיקום השערים קובעת את ה-RRP.</b></li>
+   <li>בתאים איטיים ה-RRP נמשך לתוך שלב 4 – לכן AVN מוליך לאט ו"מסנן" גירויים תכופים (הגנה על החדרים בפרפור עליות).</li>
+  </ul>
+ </div>
+</div>
+<div class="mem">ERP = <b>E</b>in (אין) תגובה בכלל. RRP = <b>R</b>ק עם גירוי חזק. תרופות שחוסמות תעלות K⁺ (למשל <i class="en">Sotalol</i>) מאריכות את ה-AP ואת ה-ERP – ככה מפסיקים הפרעות קצב.</div>
+
+<h3>2.5 ההשפעה הכרונוטרופית: איך האוטונומי מכוון את הקצב</h3>
+<p><b><i class="en">Chronotropic effect</i></b> = השפעה על <b>קצב</b> הלב (chronos = זמן). חיובי = מאיץ, שלילי = מאט. המנגנון: שינוי שיפוע שלב 4 בתאי הקוצב, שינוי הסף ושינוי פוטנציאל המנוחה.</p>
+<div class="grid2">
+ <div class="box" style="border-color:#f4a261">
+  <h4>סימפתטי – <i class="en">Norepinephrine</i> על רצפטור β<sub>1</sub> → ↑cAMP</h4>
+  <ul>
+   <li>↑ <b>I<sub>f</sub></b> ו-↑ <b>I<sub>Ca</sub></b> (וגם I<sub>K</sub>) → I<sub>f</sub> + I<sub>Ca</sub> &gt; I<sub>K</sub> → <b>שלב 4 תלול יותר</b> → מגיעים לסף מהר → ↑HR (כרונוטרופי חיובי).</li>
+   <li>גם ↑ מהירות הולכה ב-AVN (דרומוטרופי חיובי) ו-↑ כיווציות (אינוטרופי חיובי).</li>
+  </ul>
+ </div>
+ <div class="box" style="border-color:#8ecae6">
+  <h4>פרה-סימפתטי (ואגוס) – <i class="en">Acetylcholine</i> על רצפטור M<sub>2</sub></h4>
+  <ul>
+   <li>פתיחת תעלות <b>K<sub>ACh</sub></b> → יציאת K⁺ → <b>היפרפולריזציה</b> של פוטנציאל המנוחה (רחוק יותר מהסף).</li>
+   <li>↓ <b>I<sub>f</sub></b> ו-↓ <b>I<sub>Ca</sub></b> → שלב 4 שטוח יותר → ↓HR (כרונוטרופי שלילי). גם האטת הולכה ב-AVN.</li>
+   <li>במנוחה <b>הוואגוס דומיננטי</b>: קצב SAN "עצמאי" הוא ~100, והוואגוס מוריד אותו ל-~70.</li>
+  </ul>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig wide"><img src="img/autonomic-pacemaker.jpg" alt="autonomic effect on pacemaker" onclick="lb(this)"><figcaption><b>השפעת האוטונומי על פוטנציאל הקוצב.</b> a (אדום) – סימפתטי: שיפוע שלב 4 תלול, קצב מהיר. b – בסיס. c (ירוק) – ואגוס: היפרפולריזציה, שיפוע מופחת, סף גבוה יותר – AP נדיר יותר.<span class="credit">מצגת הקורס</span></figcaption></figure>
+</div>
+<div class="warn">"הפרה-סימפתטי שולט גם בכיווציות החדרים" – לא. <b>האינוטרופיה היא השפעה סימפתטית בלבד</b> (העצבוב הוואגלי לחדרים דל). הוואגוס משפיע על קצב (SAN), על הולכה (AVN) ומעט על כיווציות העליות.</div>
+</section>
+<!-- ============================================================ -->
+<section id="ecg" style="--c:var(--ecg)">
+<h2>3. אק"ג <span class="en">ECG – Electrocardiogram</span> <span class="key">חובה</span></h2>
+
+<div class="box intro">
+ <p>אק"ג הוא רישום של <b>סכום הווקטורים</b> של כל הזרמים החשמליים בלב, כפי שנראים מאלקטרודות על פני הגוף. 12 חיבורים = 12 זוויות מבט על אותו אירוע. בבוחן עובדים עם <b>Lead II</b> (יד ימין → רגל שמאל), שבו הווקטור הממוצע של הלב מצביע "לכיוון" האלקטרודה החיובית ולכן P, QRS ו-T חיוביים. זול, זמין, לא פולשני, ומספק אבחנה וכלי לטיפול.</p>
+</div>
+
+<div class="figs">
+ <figure class="fig tall"><img src="img/ecg-intervals.jpg" alt="ECG Guyton" onclick="lb(this)"><figcaption><b>אק"ג תקין ב-Lead II</b> (Guyton): PR ≈ 0.16 ש', QRS, ST, QT, RR.</figcaption></figure>
+ <figure class="fig tall"><img src="img/ecg-segments.jpg" alt="ECG segments" onclick="lb(this)"><figcaption><b>גלים, מקטעים ומרווחים.</b> 0.1 ש' = ריבוע גדול אחד.</figcaption></figure>
+ <figure class="fig tall"><img src="img/ap-vs-ecg.jpg" alt="AP vs ECG" onclick="lb(this)"><figcaption><b>AP חדרי מול אק"ג:</b> QRS = שלב 0; ST = plateau (שלב 2, כל החדר מדופלרז, אין הפרש פוטנציאלים); T = שלב 3.</figcaption></figure>
+ <figure class="fig"><img src="img/ecg-paper.jpg" alt="ECG paper" onclick="lb(this)"><figcaption><b>נייר אק"ג:</b> מהירות 25 מ"מ/שנ'; ריבוע קטן = 0.04 ש'; ריבוע גדול = 0.2 ש'; 10 מ"מ = 1 mV.</figcaption></figure>
+</div>
+
+<table>
+ <tr><th>רכיב</th><th>מה קורה בלב</th><th>ערכים תקינים</th><th>מה שינוי אומר</th></tr>
+ <tr><td><b>גל P</b></td><td>דה-פולריזציה של <b>העליות</b> (SAN → עלייה ימנית → שמאלית). הרה-פולריזציה של העליות "נבלעת" ב-QRS.</td><td>רוחב &lt;0.12 ש' (3 מ"מ), גובה &lt;2.5 מ"מ; חיובי ב-Lead II</td><td>אין P = אין פעילות סינוס (פרפור עליות); P רחב = הגדלת עלייה</td></tr>
+ <tr><td><b>מרווח PR</b></td><td>מתחילת P עד תחילת QRS = זמן ההולכה דרך העליות, <b>ה-AVN</b> (עיקר ההשהיה) וצרור היס. <i class="en">AV conduction time</i>.</td><td>0.12–0.20 ש' (3–5 ריבועים קטנים)</td><td>PR &gt; 0.20 ש' = <b>חסם AV דרגה 1</b></td></tr>
+ <tr><td><b>קומפלקס QRS</b></td><td>דה-פולריזציה של <b>החדרים</b>. Q = מחיצה (משמאל לימין), R = מסת החדרים (שמאל דומיננטי), S = בסיס החדרים.</td><td>רוחב &lt;0.12 ש'; Q תקין &lt;0.04 ש' ו-&lt;4 מ"מ</td><td>QRS רחב = הולכה חדרית איטית (חסם צרור, קצב חדרי, VT)</td></tr>
+ <tr><td><b>מקטע ST</b></td><td>plateau – כל החדרים מדופלרזים, <b>כמעט</b> תחילת רה-פולריזציה. איזואלקטרי.</td><td>אופקי, בגובה הקו האיזואלקטרי</td><td>עלייה/ירידה = איסכמיה/אוטם (לא בחומר הבוחן, אבל זה ההיגיון)</td></tr>
+ <tr><td><b>גל T</b></td><td><b>רה-פולריזציה של החדרים</b>. חיובי באותו כיוון כמו QRS כי הרה-פולריזציה מתקדמת מהאפיקרד לאנדוקרד (הפוך לדה-פולריזציה).</td><td>חיובי ב-Lead II</td><td>T הפוך/מחודד = איסכמיה / היפרקלמיה</td></tr>
+ <tr><td><b>מרווח QT</b></td><td>כל הפעילות החשמלית של החדרים (דה + רה-פולריזציה) = משך ה-AP החדרי.</td><td>QTc = QT/√RR ≈ 0.40 ש'</td><td>QT ארוך = סיכון להפרעות קצב חדריות</td></tr>
+</table>
+
+<div class="mem"><b>P</b> = <b>P</b>רוזדורים (עליות). <b>QRS</b> = חדרים מתדפלרזים (גדול כי מסת השריר גדולה). <b>T</b> = חדרים מתרפלרזים. <b>PR</b> = "פקק" ב-AVN. <b>ST</b> = "שקט" – כולם מדופלרזים.</div>
+
+<h3>3.1 קצבים שצריך לזהות</h3>
+<div class="figs">
+ <figure class="fig wide"><img src="img/ecg-sinus-rhythms.jpg" alt="sinus rhythms" onclick="lb(this)"><figcaption><b>קצב סינוס תקין (60–100), סינוס טכיקרדיה (&gt;100), סינוס ברדיקרדיה (&lt;60).</b> בכולם: כל P ואחריו QRS, PR קבוע ותקין, הקצב סדיר – רק המרווח RR משתנה.<span class="credit">מצגת הקורס</span></figcaption></figure>
+ <figure class="fig wide"><img src="img/ecg-av-block.jpg" alt="AV block" onclick="lb(this)"><figcaption><b>חסם AV.</b> דרגה 1: PR &gt; 0.20 ש' (200 ms), כל P מועבר. דרגה 2: לא כל P מועבר – מופיע P בלי QRS ("Dropped QRS").</figcaption></figure>
+ <figure class="fig wide"><img src="img/ecg-afib-vt.jpg" alt="Afib and VT" onclick="lb(this)"><figcaption><b>פרפור עליות:</b> אין גלי P, קו בסיס "רועד", QRS צר אבל <b>לא סדיר לחלוטין</b>. <b>טכיקרדיה חדרית (VT):</b> QRS רחבים ומהירים, קצב סדיר, מסכן חיים.</figcaption></figure>
+</div>
+
+<table>
+ <tr><th>קצב</th><th>P</th><th>PR</th><th>QRS</th><th>סדירות</th><th>המנגנון</th></tr>
+ <tr><td><i class="en">Normal sinus rhythm</i></td><td>לפני כל QRS</td><td>0.12–0.20</td><td>צר</td><td>סדיר, 60–100</td><td>SAN מוביל</td></tr>
+ <tr><td><i class="en">Sinus tachycardia / bradycardia</i></td><td>תקין</td><td>תקין</td><td>צר</td><td>סדיר &gt;100 / &lt;60</td><td>SAN מהיר (סימפתטי, מאמץ, חום) / איטי (ואגוס, ספורטאים, שינה)</td></tr>
+ <tr><td><i class="en">AV block 1st degree</i></td><td>תקין</td><td><b>&gt;0.20 ש'</b></td><td>צר</td><td>סדיר</td><td>השהיה מוגברת ב-AVN; כל גירוי עובר</td></tr>
+ <tr><td><i class="en">AV block 2nd degree</i></td><td>יותר P מ-QRS</td><td>משתנה/קבוע</td><td>צר</td><td>לא סדיר (פעימות "נופלות")</td><td>חלק מהגירויים נחסמים ב-AVN</td></tr>
+ <tr><td><i class="en">Atrial fibrillation</i></td><td><b>אין</b></td><td>–</td><td>צר</td><td><b>לא סדיר לחלוטין</b></td><td>מוקדים רבים בעליות יורים בכאוס; ה-AVN מעביר חלק אקראי מהם</td></tr>
+ <tr><td><i class="en">Ventricular tachycardia</i></td><td>אין / לא קשור</td><td>–</td><td><b>רחב</b></td><td>סדיר, מהיר</td><td>מוקד/מעגל בחדר; מסכן חיים</td></tr>
+</table>
+
+<div class="box">
+ <h4>דוגמה מההרצאה: פרפור עליות – שלוש גישות טיפול שמלמדות את כל הפיזיולוגיה</h4>
+ <ol>
+  <li><b>חוסם β (עיכוב סימפתטי)</b> – מאט את ההולכה ב-AVN ומוריד את "התגובה החדרית" (rate control). הפרפור ממשיך, אבל החדרים פועמים לאט יותר.</li>
+  <li><b>אנטי-אריתמי – מעכב תעלות K⁺</b> (<i class="en">Sotalol</i>) – מאריך את ה-AP ואת <b>התקופה הרפרקטורית</b>, כך שהמעגלים בעלייה "נתקעים" ברקמה רפרקטורית ונכבים; ה-SAN חוזר להיות הקוצב (rhythm control).</li>
+  <li><b>היפוך חשמלי</b> (<i class="en">Cardioversion</i>) – מכת חשמל מפעילה <b>את כל התאים בבת אחת</b>, כולם נכנסים לתקופה רפרקטורית יחד, הכאוס נעצר, וה-SAN (המהיר ביותר) יוצא ראשון לפעולה.</li>
+ </ol>
+ <div class="figs">
+  <figure class="fig"><img src="img/afib-pathways.jpg" alt="afib" onclick="lb(this)"><figcaption>מסלולים תקינים מול פרפור עליות.</figcaption></figure>
+  <figure class="fig"><img src="img/sotalol-ap.jpg" alt="sotalol" onclick="lb(this)"><figcaption>סוטלול מאריך את ה-AP (ואת ה-ERP) – התדירות המקסימלית של AP יורדת.</figcaption></figure>
+  <figure class="fig"><img src="img/cardioversion.jpg" alt="cardioversion" onclick="lb(this)"><figcaption>לפני ואחרי היפוך חשמלי – חזרה לקצב סינוס.</figcaption></figure>
+ </div>
+</div>
+</section>
+<!-- ============================================================ -->
+<section id="cycle" style="--c:var(--mech)">
+<h2>4. מחזור הלב וקולות הלב <span class="en">Cardiac Cycle &amp; Heart Sounds</span> <span class="key">חובה</span></h2>
+
+<div class="box intro">
+ <p><b><i class="en">Cardiac cycle</i></b> = כל האירועים מתחילת פעימה אחת עד תחילת הבאה: <b>סיסטולה</b> (כיווץ החדרים ופליטה) ו<b>דיאסטולה</b> (הרפיה ומילוי). ב-75 פעימות/דקה המחזור נמשך 0.8 ש': ~0.3 סיסטולה, ~0.5 דיאסטולה. כשהקצב עולה – <b>הדיאסטולה מתקצרת</b> הרבה יותר מהסיסטולה, ולכן זמן המילוי נפגע.</p>
+ <p><b>כלל הברזל של המסתמים:</b> מסתם נפתח או נסגר <b>רק</b> לפי הפרש לחצים. הלחץ גבוה יותר "לפני" המסתם → נפתח; גבוה יותר "אחריו" → נסגר. אין עצבים ואין שרירים שמפעילים אותם.</p>
+</div>
+
+<h3>4.1 דיאגרמת וויגרס <i class="en">(Wiggers Diagram)</i> – תחנה אחרי תחנה</h3>
+<p>תרשים שמתאר על ציר זמן, לאורך פעימה אחת, את הלחצים (אאורטה, חדר שמאל, עלייה שמאל), נפח החדר, האק"ג והפונוקרדיוגרם. <b>האיור הזה הופיע בבוחן הבוקר ובבוחן 1</b> עם אותיות A–D ומספרים 1–6:</p>
+<div class="figs">
+ <figure class="fig wide"><img src="img/quiz-wiggers.jpg" alt="Wiggers from quiz" onclick="lb(this)"><figcaption><b>האיור מהבוחן.</b> כחול = לחץ חדר שמאל, אפור עליון = לחץ אאורטה, אפור תחתון = לחץ עלייה, אדום = נפח חדר. <b>A</b> = סגירת מיטרלי, <b>B</b> = פתיחת אאורטלי, <b>C</b> = סגירת אאורטלי, <b>D</b> = פתיחת מיטרלי. <b>1</b> = כיווץ איזו-וולומטרי, <b>2</b> = פליטה (systolic ejection), <b>3</b> = הרפיה איזו-וולומטרית, <b>4</b> = מילוי מהיר, <b>5</b> = מילוי איטי (diastasis), <b>6</b> = סיסטולה עלייתית.<span class="credit">בוחן בוקר 04.12 / בוחן 1</span></figcaption></figure>
+ <figure class="fig wide"><img src="img/wiggers-lecture.jpg" alt="Wiggers lecture" onclick="lb(this)"><figcaption><b>הגרסה מההרצאה</b> עם שמות השלבים, זרימה באאורטה, דופק ורידי וקולות הלב (4 → 1 → 2 → 3).</figcaption></figure>
+</div>
+
+<div class="steps" style="--c:var(--mech)">
+ <div class="st"><h4>סיסטולה עלייתית <i class="en">Atrial systole</i> <span class="tag">מספר 6 · אחרי גל P</span></h4>
+  <ul><li>העליות מתכווצות ומוסיפות את ~20–30% האחרונים של המילוי ("atrial kick"). המסתמים האטריו-ונטריקולריים פתוחים, מסתמי העורקים סגורים.</li><li>בסופה: נפח החדר מקסימלי = <b>EDV</b>, הלחץ בחדר עולה מעט מעל העלייה → <b>המיטרלי נסגר (A)</b> → <b>S1</b>. גל a בדופק הוורידי; קול <b>S4</b> אם החדר קשיח.</li></ul></div>
+ <div class="st"><h4>כיווץ איזו-וולומטרי <i class="en">Isovolumetric contraction</i> <span class="tag">מספר 1 · A → B · במהלך QRS</span></h4>
+  <ul><li>כל המסתמים <b>סגורים</b>; הנפח קבוע (לכן "איזו-וולומטרי") והלחץ בחדר <b>מזנק</b> מ-~8 ל-~80 mmHg.</li><li>נגמר כשלחץ החדר עובר את הלחץ הדיאסטולי באאורטה (~80) → <b>המסתם האאורטלי נפתח (B)</b>.</li></ul></div>
+ <div class="st"><h4>פליטה <i class="en">Systolic ejection</i> <span class="tag">מספר 2 · B → C</span></h4>
+  <ul><li>פליטה מהירה (rapid ejection): הנפח יורד בחדות, הלחץ ממשיך לעלות עד השיא (~120). פליטה איטית (reduced ejection): הלחץ יורד, הזרימה נמשכת מתוך תנע.</li><li>כמות הדם שיוצאת = <b>SV</b>. בסוף: הלחץ בחדר יורד מתחת לאאורטה → <b>המסתם האאורטלי נסגר (C)</b> → <b>S2</b> ו"חריץ" (dicrotic notch) בעקומת האאורטה. גל T מופיע כאן.</li></ul></div>
+ <div class="st"><h4>הרפיה איזו-וולומטרית <i class="en">Isovolumetric relaxation</i> <span class="tag">מספר 3 · C → D</span></h4>
+  <ul><li>כל המסתמים סגורים שוב; הנפח קבוע = <b>ESV</b>; הלחץ צונח. נגמר כשהלחץ בחדר יורד מתחת ללחץ העלייה → <b>המיטרלי נפתח (D)</b>.</li></ul></div>
+ <div class="st"><h4>מילוי מהיר <i class="en">Rapid ventricular filling</i> <span class="tag">מספר 4</span></h4>
+  <ul><li>הדם שהצטבר בעלייה במהלך הסיסטולה נשפך לחדר. ~70–80% מהמילוי קורה כאן, <b>פסיבית</b>, ללא כיווץ עלייתי. קול <b>S3</b> אם החדר מורחב/באי-ספיקה.</li></ul></div>
+ <div class="st"><h4>מילוי איטי <i class="en">Diastasis</i> <span class="tag">מספר 5</span></h4>
+  <ul><li>זרימה מעטה מהוורידים דרך העלייה לחדר. זהו השלב ש<b>מתקצר ראשון</b> כשהקצב עולה. ואז מגיע גל P והמחזור חוזר.</li></ul></div>
+</div>
+
+<div class="quizref">שלוש שאלות על האיור הזה: "איזו אות מסמנת את פתיחת המסתם המיטרלי?" – <b>D</b>. "איזו אות מסמנת את פתיחת המסתם האאורטלי?" – <b>B</b>. "איזה מספר מסמן את התקופה בה יוצא דם החוצה מחדר שמאל (Systolic ejection)?" – <b>2</b>.</div>
+<div class="mem">סדר אירועי המסתמים בכל מחזור: <b>מ</b>יטרלי נסגר (S1) → <b>א</b>אורטלי נפתח → <b>א</b>אורטלי נסגר (S2) → <b>מ</b>יטרלי נפתח. "מאאמ": נסגר-נפתח-נסגר-נפתח. בין כל זוג שבו <b>שניהם סגורים</b> יש שלב איזו-וולומטרי (נפח קבוע, לחץ משתנה).</div>
+<div class="warn">מסתם נפתח/נסגר <b>רק</b> לפי הפרש לחצים: פתיחת האאורטלי היא ברגע שלחץ החדר <b>עובר</b> את הלחץ הדיאסטולי באאורטה (~80 mmHg), לא בשיא הלחץ. פתיחת המיטרלי היא כשלחץ החדר יורד <b>מתחת</b> ללחץ העלייה – כלומר בסוף ההרפיה האיזו-וולומטרית, בלחץ נמוך מאוד.</div>
+
+<h3>4.2 קולות הלב <i class="en">(Heart Sounds S1–S4)</i></h3>
+<div class="grid2">
+ <div class="box">
+  <h4>תקינים</h4>
+  <ul>
+   <li><b>S1</b> – "לאב": <b>סגירת המסתמים בין העליות לחדרים</b> (מיטרלי + טריקוספידלי). תחילת הסיסטולה. נוצר בעיקר מ<b>זרימה מערבולתית</b> בעת סגירת המסתם, ומעט מתנועת עלי המסתם והכורדות.</li>
+   <li><b>S2</b> – "דאב": <b>סגירת המסתמים בין החדרים לעורקים</b> (אאורטלי + פולמונלי). סוף הסיסטולה/תחילת הדיאסטולה. יכול להתפצל בשאיפה (A2 לפני P2).</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4>לא תקינים</h4>
+  <ul>
+   <li><b>S3</b> – ב<b>תחילת הדיאסטולה</b> (מילוי מהיר), כשדם נכנס בזרם לחדר <b>מורחב ורפוי</b>: <b>אי-ספיקת לב</b> ("S3 gallop"). יכול להיות תקין בצעירים.</li>
+   <li><b>S4</b> – ב<b>סוף הדיאסטולה</b>, בעת כיווץ העלייה לתוך חדר <b>קשיח</b> (היענות ירודה – היפרטרופיה, איסכמיה).</li>
+   <li><b>אוושות</b> (<i class="en">Murmurs</i>) – צליל מתמשך מזרימה מערבולתית דרך מסתם <b>מוצר</b> (stenosis) או <b>דולף</b> (regurgitation), בסיסטולה או בדיאסטולה. דוגמה מההרצאה: היצרות מסתם אאורטלי → אוושה סיסטולית.</li>
+  </ul>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig"><img src="img/heart-sounds.jpg" alt="heart sounds" onclick="lb(this)"><figcaption>S1 בתחילת עליית הלחץ, S2 בסגירת האאורטלי; "Gradient" = הפרש הלחץ חדר–אאורטה בהיצרות.</figcaption></figure>
+ <figure class="fig"><img src="img/heart-sounds-abnormal.jpg" alt="S3 S4" onclick="lb(this)"><figcaption>S3 בתחילת הדיאסטולה (אי-ספיקה), S4 בכיווץ העלייה (חדר קשיח).</figcaption></figure>
+ <figure class="fig"><img src="img/cycle-phases.jpg" alt="cycle phases" onclick="lb(this)"><figcaption>שלושת השלבים הגסים: דיאסטולה כללית (0.4 ש'), סיסטולה עלייתית (0.1), סיסטולה חדרית (0.3).</figcaption></figure>
+</div>
+<div class="mem">S1 = סגירת <b>AV</b> = תחילת סיסטולה. S2 = סגירת <b>סמילונרים</b> = סוף סיסטולה. S3 = "<b>ש</b>לישי – <b>ש</b>פיכה" לחדר רפוי (תחילת דיאסטולה). S4 = "<b>ע</b>לייה <b>ד</b>וחפת לחדר <b>ק</b>שיח" (סוף דיאסטולה). הכול "LUB-DUB": lub = S1, dub = S2.</div>
+</section>
+<!-- ============================================================ -->
+<section id="mech" style="--c:var(--mech)">
+<h2>5. צימוד עירור-כיווץ, Preload, Afterload וכיווציות <span class="en">Mechanical Properties</span></h2>
+
+<div class="box intro">
+ <p><b>משפט המפתח מההרצאה:</b> "העבודה האפקטיבית של הלב נקבעת ע"י <b>נפח ההתמלאות</b> (preload), <b>ההתנגדות הפריפרית</b> (afterload) <b>ויכולת השריר להתכווץ</b> (contractility)". כל השאר – פרנק-סטרלינג, PV loop, הורמונים – הן דרכים לתאר ולשנות את שלושת אלה.</p>
+</div>
+
+<h3>5.1 צימוד עירור-כיווץ <i class="en">(Excitation-Contraction Coupling)</i></h3>
+<div class="grid2">
+ <div class="box">
+  <h4>מהגירוי החשמלי ועד ה-twitch</h4>
+  <ol>
+   <li>AP רץ על הסרקולמה ולתוך ה-<i class="en">T-tubules</i>.</li>
+   <li>בשלב 2 (plateau) נפתחות תעלות <b>Ca²⁺ מסוג L</b> (DHP receptors) – <b>סידן חוץ-תאי</b> נכנס. הכמות קטנה, לא מספיקה לכיווץ.</li>
+   <li>הסידן הזה נקשר ל-<b>RyR</b> (<i class="en">Ryanodine receptors</i>) על ה-SR → <b>שחרור סידן מסיבי מה-SR</b> = <i class="en">Calcium-induced calcium release (CICR)</i>. זה <b>הסידן התוך-תאי</b>.</li>
+   <li>Ca²⁺ נקשר ל-<b>Troponin C</b> → טרופומיוזין זז → אקטין-מיוזין נקשרים → כיווץ (ATP).</li>
+   <li>הרפיה: <b>SERCA</b> שואב סידן חזרה ל-SR (מעוכב ע"י <i class="en">Phospholamban</i>); <b>NCX</b> (מחליף 3Na⁺/1Ca²⁺) מוציא סידן מהתא; גם משאבת Ca²⁺-ATPase בממברנה.</li>
+  </ol>
+ </div>
+ <div class="box">
+  <h4>ההבדל המהותי משריר שלד</h4>
+  <ul>
+   <li>בשריר שלד הסידן מגיע <b>רק מה-SR</b> (צימוד מכני ישיר DHP–RyR). בשריר לב <b>צריך את שני המקורות</b>: חוץ-תאי (טריגר) ותוך-תאי (הכמות). בלי סידן חוץ-תאי – הלב לא מתכווץ.</li>
+   <li>לכן <b>כל מה שמעלה את ריכוז הסידן בציטוזול מגביר כיווציות</b> – זה הבסיס של כל האפקטים האינוטרופיים.</li>
+   <li><b>דיגוקסין</b> (דוגמה קלינית): מעכב <b>Na⁺/K⁺-ATPase</b> → Na⁺ תוך-תאי עולה → ה-NCX (שתלוי במפל הנתרן) מוציא פחות Ca²⁺ → יותר Ca²⁺ נשאר בתא ונאגר ב-SR → <b>כיווץ חזק יותר</b> (אינוטרופי חיובי).</li>
+  </ul>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig wide"><img src="img/ec-coupling.jpg" alt="EC coupling" onclick="lb(this)"><figcaption><b>צימוד עירור-כיווץ בקרדיומיוציט.</b> סידן נכנס דרך תעלות L בסרקולמה/T-tubule → RyR משחרר סידן מה-SR → מיופילמנטים. הרפיה: SERCA ל-SR, NCX ומשאבת Ca החוצה. בפינה: AP, זרם הסידן והכיווץ לאורך ~200 ms.<span class="credit">Koeppen &amp; Stanton, Berne &amp; Levy Physiology, 6th ed.</span></figcaption></figure>
+ <figure class="fig"><img src="img/digitalis.jpg" alt="digitalis" onclick="lb(this)"><figcaption><b>דיגוקסין:</b> חסימת Na/K-ATPase → ↑Na⁺ → NCX מוציא פחות Ca²⁺ → ↑Ca²⁺ → ↑Inotropy.</figcaption></figure>
+</div>
+
+<h3>5.2 שלושת הגורמים <span class="key">חובה</span></h3>
+<div class="grid3">
+ <div class="box" style="border-top:4px solid #4361ee">
+  <h4><i class="en">Preload</i> – עומס מוקדם</h4>
+  <ul>
+   <li><b>הגדרה:</b> העומס/המתיחה של השריר <b>בסוף הדיאסטולה, רגע לפני הכיווץ</b>. מבטא את נפח ההתמלאות של החדר.</li>
+   <li><b>המדד:</b> <b>EDV</b> (או EDP – לחץ סוף-דיאסטולי, נוח להשוואה בין לבבות בגדלים שונים).</li>
+   <li><b>המשמעות התאית:</b> מתיחה מסדרת את הסרקומרים באורך אופטימלי (~2.2 µm) – יותר חפיפה אקטין-מיוזין, יותר רגישות לסידן.</li>
+   <li><b>המתח הפסיבי</b> שמתפתח לפני הכיווץ.</li>
+   <li>↑ ע"י: החזר ורידי ↑ (עירוי, שכיבה, כיווץ ורידים סימפתטי, קצב איטי = זמן מילוי), ↓ ע"י: דימום, עמידה, קצב מהיר מאוד.</li>
+  </ul>
+ </div>
+ <div class="box" style="border-top:4px solid #e76f51">
+  <h4><i class="en">Afterload</i> – עומס בתר</h4>
+  <ul>
+   <li><b>הגדרה:</b> הכוח <b>שכנגדו הלב מתכווץ</b> כדי לפלוט דם. "העומס ההידראולי שיש להתגבר עליו".</li>
+   <li><b>תלוי ב:</b> התנגדות העורקים הפריפריים (<b>TPR</b>), לחץ הדם באאורטה, היענות (elastance) העורקים.</li>
+   <li>יש בו מרכיב <b>איזומטרי</b> (לפני פתיחת המסתם – בניית לחץ בנפח קבוע) ומרכיב <b>איזוטוני</b> (קיצור כנגד ההתנגדות הפריפרית).</li>
+   <li>↑ ע"י: כיווץ עורקיקים (NE), יתר לחץ דם, היצרות אאורטלית. ↓ ע"י: מרחיבי כלי דם (ניטרופרוסיד).</li>
+  </ul>
+ </div>
+ <div class="box" style="border-top:4px solid #2a9d8f">
+  <h4><i class="en">Contractility / Inotropy</i> – כיווציות</h4>
+  <ul>
+   <li><b>הגדרה:</b> היכולת <b>הפנימית</b> של השריר לפתח כוח/להתקצר, <b>ללא תלות</b> ב-preload וב-afterload.</li>
+   <li><b>ברמת התא:</b> כמות הסידן בציטוזול ורגישות המיופילמנטים לסידן; מהירות פירוק ATP ביצירת קשרי אקטין-מיוזין.</li>
+   <li><b>ברמת החדר:</b> מסה (מספר תאים), אחידות, <b>סנכרון</b>.</li>
+   <li><b>מדדים:</b> dP/dt מקסימלי, שיפוע ה-ESPVR (E<sub>es</sub>). <b>לא</b> לחץ דם ולא EF לבדם (הם תלויים גם בעומסים).</li>
+   <li>↑ ע"י: קטכולאמינים, דיגוקסין, ↑HR. ↓ ע"י: חוסמי β, חמצת, היפוקסיה קשה, אי-ספיקה.</li>
+  </ul>
+ </div>
+</div>
+
+<h3>5.3 נפחים ומקטעים <span class="key">חובה</span></h3>
+<div class="grid2">
+ <div class="box">
+  <table>
+   <tr><th>מושג</th><th>הגדרה</th><th>ערך תקין</th></tr>
+   <tr><td><i class="en">EDV – End-Diastolic Volume</i></td><td>נפח החדר בסוף המילוי (= preload)</td><td>~120–130 מ"ל</td></tr>
+   <tr><td><i class="en">ESV – End-Systolic Volume</i></td><td>הנפח השאריתי אחרי הפליטה. <b>הלב לא מתרוקן לחלוטין!</b></td><td>~50 מ"ל</td></tr>
+   <tr><td><i class="en">SV – Stroke Volume</i></td><td>נפח הדם שיוצא בפעימה אחת = <b>EDV − ESV</b></td><td>~70 מ"ל</td></tr>
+   <tr><td><i class="en">EF – Ejection Fraction</i></td><td>אחוז הדם שיוצא מתוך מה שהיה בחדר = <b>SV / EDV</b>. המדד הנפוץ ביותר לתפקוד הלב (אקו, מיפוי).</td><td>~60%</td></tr>
+   <tr><td><i class="en">CO – Cardiac Output</i></td><td>כמות הדם שיוצאת מהלב ביחידת זמן = <b>SV × HR</b>. פה נכנס מרכיב הזמן.</td><td>5–6 ל'/דקה במנוחה</td></tr>
+  </table>
+ </div>
+ <div class="box">
+  <h4>תרגיל חשבון שחוזר בשאלות</h4>
+  <p>EDV = 130, ESV = 50 → SV = 80 מ"ל; EF = 80/130 ≈ 62%; ב-HR 70 → CO = 5.6 ל'/דקה.</p>
+  <p><b>מה קורה כשהקצב עולה מ-60 ל-120?</b> זמן הדיאסטולה מתקצר → פחות מילוי → EDV ו-SV <b>קטנים מעט</b>; אבל HR הוכפל, ולכן <b>CO עולה</b> (SV יורד פחות ממה ש-HR עולה). רק בקצבים גבוהים מאוד (&gt;~180) ה-SV צונח כל כך ש-CO מתחיל לרדת.</p>
+  <div class="quizref">"עלייה בקצב הלב מ-60 ל-120 פעימות לדקה – אומנם מקטינה את נפח הפעימה אך מגדילה את תפוקת הלב" – <b>נכון</b>. "הפעלת המערכת הסימפתטית על הלב תגדיל את הכיווציות ותאיץ את קצב הלב, לכן תעלה תפוקת הלב" – <b>נכון</b>. המסיח "הסימפתטי מגדיל כיווציות אך מאט את הקצב" – <b>לא נכון</b>.</div>
+ </div>
+</div>
+</section>
+<!-- ============================================================ -->
+<section id="pv" style="--c:var(--mech)">
+<h2>6. חוק פרנק-סטרלינג ולולאת לחץ-נפח <span class="en">Frank-Starling Law &amp; PV Loop</span> <span class="key">חובה</span></h2>
+
+<h3>6.1 חוק פרנק-סטרלינג <i class="en">(Frank-Starling Law, 1914)</i></h3>
+<div class="grid2">
+ <div class="box">
+  <p><b>הניסוח:</b> הקשר בין <b>האורך ההתחלתי של סיב השריר</b> (= נפח המילוי, preload) לבין <b>הכוח שאותו סיב מפתח</b> (= SV, לחץ, עבודה). בפשטות: <b>ככל שהלב מתמלא יותר – הוא מתכווץ חזק יותר</b> ופולט יותר – עד גבול.</p>
+  <p><b>ניסוי 2 מההרצאה:</b> מילוי הדרגתי של לב רפוי יוצר <b>מתח פסיבי</b> (העקומה הדיאסטולית, עולה בתלילות בנפחים גבוהים). גירוי בכל נפח יוצר <b>מתח אקטיבי</b> (העקומה הסיסטולית). תצפיות:</p>
+  <ul>
+   <li><b>לב ריק לא יכול לפתח מתח אקטיבי</b>.</li>
+   <li>המתח האקטיבי תלוי ב-preload; ה-preload "היעיל" הוא זה שמאפשר מתח אקטיבי מקסימלי.</li>
+   <li>מעבר ל-preload מסוים יש <b>ירידה</b> בכוח (הסרקומרים נמתחו יתר על המידה – פחות חפיפה). בלב בריא כמעט לא מגיעים לשם.</li>
+  </ul>
+  <p><b>המנגנון התאי:</b> מתיחה → אורך סרקומר אופטימלי (~2.2 µm) → חפיפה מיטבית של אקטין-מיוזין, וגם <b>↑ רגישות הטרופונין לסידן</b> (length-dependent activation).</p>
+ </div>
+ <div class="box">
+  <h4>למה זה חשוב – שני תפקידים</h4>
+  <ol>
+   <li><b>איזון בין שתי המשאבות:</b> אם לב ימין פולט מעט יותר, לב שמאל מקבל יותר דם, נמתח יותר ופולט יותר – תוך פעימות ספורות הפליטה משתווה. ללא עצבים, ללא הורמונים.</li>
+   <li><b>התאמה אוטומטית להחזר הוורידי:</b> כל מה שחוזר ללב – יוצא. "הלב פולט מה שהוא מקבל".</li>
+  </ol>
+  <p><b>בקרה מקומית (Intrinsic):</b> פרנק-סטרלינג הוא מנגנון <b>פנימי</b> של הלב – לא דורש עצבים או הורמונים, ונצפה גם בלב מבודד.</p>
+  <div class="mem">"<b>יותר נכנס – יותר יוצא</b>". ולמה SV ולא לחץ? כי בניסוי בודדו את הלב מכלי הדם הפריפריים ומדדו כמה דם יצא בפעימה אחת.</div>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig tall"><img src="img/frank-starling-curves.jpg" alt="FS curves" onclick="lb(this)"><figcaption><b>עקומות פרנק-סטרלינג:</b> דיאסטולה = מתח פסיבי (ללא גירוי), סיסטולה = מתח אקטיבי (אחרי גירוי) כתלות באורך הסיב ההתחלתי / EDV.</figcaption></figure>
+ <figure class="fig"><img src="img/frank-starling-co.jpg" alt="FS CO" onclick="lb(this)"><figcaption><b>CO כנגד לחץ סוף-דיאסטולי:</b> עולה, ואז מתיישר (הלב הגיע למגבלת התגובה).</figcaption></figure>
+ <figure class="fig"><img src="img/sarcomere-length.jpg" alt="sarcomere" onclick="lb(this)"><figcaption><b>הבסיס – הסרקומר:</b> ב-2.2 µm חפיפה מיטבית; ב-&lt;2.0 הפילמנטים "מתנגשים"; מעבר – פחות גשרים.</figcaption></figure>
+ <figure class="fig"><img src="img/catecholamine-work.jpg" alt="catecholamine curves" onclick="lb(this)"><figcaption><b>ניסוי 3:</b> קטכולאמינים מזיזים את כל העקומה <b>למעלה ושמאלה</b> – באותו preload יותר עבודה = שינוי כיווציות, בלתי תלוי ב-preload.</figcaption></figure>
+ <figure class="fig"><img src="img/starling-shifts.jpg" alt="shifts" onclick="lb(this)"><figcaption><b>הסטות של עקומת סטרלינג:</b> למעלה (↑ כיווציות, ↓ afterload) או למטה (↓ כיווציות, ↑ afterload).</figcaption></figure>
+</div>
+<div class="warn">"על פי עקומת Frank-Starling הגדלת ה-PRELOAD תגדיל את הלחץ המקסימלי שהלב יצור בעת הסיסטולה – כך מתאפשר הקטנה של נפח הפעימה" – <b>לא נכון</b>. הגדלת preload מגדילה גם את הלחץ וגם את <b>נפח הפעימה</b>. הגדלת preload אף פעם לא מקטינה SV (בטווח הפיזיולוגי).</div>
+
+<h3>6.2 לולאת לחץ-נפח <i class="en">(Pressure-Volume Loop)</i> – נקודה אחרי נקודה</h3>
+<p>אותו מחזור לב, אבל על צירים של <b>נפח (x) מול לחץ (y)</b> בחדר שמאל – <b>בלי ציר זמן</b>. הלולאה נעה <b>נגד כיוון השעון</b>. השטח בתוכה = <b>עבודת הפעימה</b> (stroke work). <b>האיור עם האותיות A–F הופיע בבוחן הבוקר ובבוחן 1:</b></p>
+<div class="figs">
+ <figure class="fig tall"><img src="img/quiz-pvloop.jpg" alt="PV loop quiz" onclick="lb(this)"><figcaption><b>האיור מהבוחן.</b> A = פתיחת מיטרלי (ESV); A→C מילוי; C = סגירת מיטרלי (EDV, preload); C→D כיווץ איזו-וולומטרי; D = פתיחת אאורטלי; D→F פליטה; E = שיא הלחץ (afterload); F = סגירת אאורטלי; F→A הרפיה איזו-וולומטרית.<span class="credit">בוחן בוקר 04.12 / בוחן 1</span></figcaption></figure>
+ <figure class="fig tall"><img src="img/pv-loop-guyton.jpg" alt="PV loop Guyton" onclick="lb(this)"><figcaption><b>אותה לולאה מ-Guyton</b> עם שמות: תקופת מילוי, כיווץ איזו-וולומטרי, פליטה, הרפיה איזו-וולומטרית. EW = עבודה חיצונית.</figcaption></figure>
+ <figure class="fig tall"><img src="img/espvr-edpvr.jpg" alt="ESPVR EDPVR" onclick="lb(this)"><figcaption><b>ESPVR ו-EDPVR:</b> הלולאה "כלואה" בין שני הקווים. SV = רוחב הלולאה (EDV − ESV).</figcaption></figure>
+</div>
+
+<div class="steps" style="--c:#4361ee">
+ <div class="st"><h4>נקודה A – פתיחת המסתם המיטרלי <span class="tag">נפח = ESV · לחץ נמוך ביותר</span></h4><ul><li>סוף ההרפיה האיזו-וולומטרית. לחץ החדר ירד מתחת ללחץ העלייה. זהו <b>הנפח השאריתי</b>.</li></ul></div>
+ <div class="st"><h4>A → B → C – מילוי דיאסטולי <span class="tag">הנפח עולה, הלחץ כמעט לא</span></h4><ul><li><b>A→B:</b> התמלאות תוך <b>ירידת לחץ</b> – איך? החדר עדיין מתרפה באופן אקטיבי ו"שואב" (suction), הלחץ ממשיך לרדת למרות שנפח נכנס. <b>B</b> = הרפיה מקסימלית.</li><li><b>B→C:</b> התמלאות תוך יצירת <b>מתח פסיבי</b> – הדופן נמתחת; זה הקטע שרץ על ה-<b>EDPVR</b>. סיסטולת העלייה היא "הבליטה" הקטנה ממש לפני C.</li></ul></div>
+ <div class="st"><h4>נקודה C – סגירת המסתם המיטרלי <span class="tag">נפח = EDV = Preload</span></h4><ul><li>החדר מתחיל להתכווץ, הלחץ עולה מעל העלייה והמיטרלי נסגר (S1). <b>הנקודה שמייצגת את ה-preload.</b></li></ul></div>
+ <div class="st"><h4>C → D – כיווץ איזו-וולומטרי <span class="tag">קו אנכי: נפח קבוע, לחץ מזנק</span></h4><ul><li>כל המסתמים סגורים. הלחץ עולה מ-~10 ל-~80 mmHg.</li></ul></div>
+ <div class="st"><h4>נקודה D – פתיחת המסתם האאורטלי ותחילת הפליטה <span class="tag">לחץ החדר = לחץ דיאסטולי באאורטה (~80)</span></h4><ul><li>תחילת ה-<i class="en">Systolic ejection</i>.</li></ul></div>
+ <div class="st"><h4>D → E → F – פליטה <span class="tag">הנפח יורד</span></h4><ul><li><b>D→E – פליטה מהירה:</b> כיווץ אקטיבי, התרוקנות תוך כדי <b>עליית</b> לחץ. <b>E = שיא הלחץ = ה-afterload</b> בלולאה.</li><li><b>E→F – פליטה איטית:</b> התרוקנות תוך כדי <b>ירידת</b> לחץ – איך אפשרי? הדם ממשיך לצאת בגלל <b>תנע</b> (אינרציה) למרות שהחדר כבר מתחיל להרפות.</li></ul></div>
+ <div class="st"><h4>נקודה F – סגירת המסתם האאורטלי <span class="tag">נפח = ESV</span></h4><ul><li>לחץ החדר ירד מתחת לאאורטה (S2). <b>רצף נקודות F בתנאים שונים יוצר את ה-ESPVR.</b></li></ul></div>
+ <div class="st"><h4>F → A – הרפיה איזו-וולומטרית <span class="tag">קו אנכי: נפח קבוע, לחץ צונח</span></h4><ul><li>חזרה ל-A.</li></ul></div>
+</div>
+
+<div class="quizref">"באיזו נקודה מודגמת פתיחת המסתם האאורטלי ותחילת ה-Systolic ejection?" – <b>D</b>. "נפח הפעימה (SV) נמדד בין הנקודות" – <b>D–F</b> (רוחב הלולאה בשלב הפליטה; שווה ערך ל-C–A). "על איזו נקודה תשפיע הגדלת הנפח הסוף-דיאסטולי?" – <b>C</b> (C היא EDV; הגדלת preload מזיזה את C ימינה על ה-EDPVR).</div>
+
+<div class="grid2">
+ <div class="box">
+  <h4><i class="en">EDPVR – End-Diastolic Pressure-Volume Relationship</i></h4>
+  <ul>
+   <li>הקו שמחבר את נקודות C (EDV) בתנאי preload שונים = <b>העקומה הפסיבית</b> של פרנק-סטרלינג.</li>
+   <li>מבטא את <b>ההיענות (compliance)</b> של החדר: ΔV/ΔP. <b>לב קשיח</b> (היפרטרופיה, איסכמיה) – שיפוע תלול: שינוי קטן בנפח → שינוי גדול בלחץ. <b>לב אלסטי</b> – שיפוע שטוח.</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4><i class="en">ESPVR – End-Systolic Pressure-Volume Relationship</i></h4>
+  <ul>
+   <li>הקו שמחבר את נקודות F (ESV) = <b>העקומה האקטיבית</b> של פרנק-סטרלינג. מבטא את <b>העבודה הפוטנציאלית</b> של הלב.</li>
+   <li><b>שיפועו (E<sub>es</sub>) הוא מדד לכיווציות</b> – ורק הוא משתנה עם אינוטרופיה. <b>שינוי ב-preload או ב-afterload לא משנה את השיפוע</b> – הלולאה רק זזה לאורכו.</li>
+  </ul>
+ </div>
+</div>
+
+<h3>6.3 מה קורה ללולאה כשמשנים כל גורם (ניסויים 4–6)</h3>
+<table>
+ <tr><th>שינוי</th><th>EDV</th><th>ESV</th><th>SV</th><th>EF</th><th>לחץ סיסטולי</th><th>איך הלולאה זזה</th><th>שיפוע ESPVR</th></tr>
+ <tr><td><b>↑ Preload</b> (עירוי, החזר ורידי)</td><td class="up">↑</td><td class="same">≈ (עולה מעט)</td><td class="up">↑</td><td class="up">↑ מעט</td><td class="up">↑</td><td>מתרחבת <b>ימינה</b> על אותו EDPVR</td><td class="same">ללא שינוי</td></tr>
+ <tr><td><b>↑ Afterload</b> (TPR ↑, NE, יל"ד)</td><td class="same">≈ (עולה אחרי כמה פעימות)</td><td class="up">↑</td><td class="down">↓</td><td class="down">↓</td><td class="up">↑</td><td>גבוהה וצרה, נקודת F נעה <b>למעלה-ימינה</b> על אותו ESPVR</td><td class="same">ללא שינוי</td></tr>
+ <tr><td><b>↑ Contractility</b> (קטכולאמינים, דיגוקסין)</td><td class="same">≈</td><td class="down">↓</td><td class="up">↑</td><td class="up">↑</td><td class="up">↑</td><td>מתרחבת <b>שמאלה</b>; ESPVR תלול יותר</td><td class="up">↑ (תלול)</td></tr>
+ <tr><td><b>↓ Contractility</b> (חוסמי β, אי-ספיקה)</td><td class="up">↑ (עם הזמן)</td><td class="up">↑</td><td class="down">↓</td><td class="down">↓</td><td class="down">↓</td><td>קטנה, זזה ימינה; ESPVR שטוח</td><td class="down">↓ (שטוח)</td></tr>
+</table>
+<div class="figs">
+ <figure class="fig wide"><img src="img/pv-preload.jpg" alt="preload loops" onclick="lb(this)"><figcaption><b>ניסוי 4 – preload:</b> ↑EDV → הלולאה מתרחבת ימינה, ESV כמעט לא משתנה, SV ו-EF גדלים. ↓EDV – ההפך.</figcaption></figure>
+ <figure class="fig wide"><img src="img/pv-afterload.jpg" alt="afterload loops" onclick="lb(this)"><figcaption><b>ניסוי 5 – afterload:</b> ↑TPR → לחץ גבוה יותר, פליטה נגמרת מוקדם, ESV ↑, SV ↓, EF ↓. הלולאה נעה למעלה-שמאלה <b>על אותו ESPVR</b>. ↓TPR – ההפך.</figcaption></figure>
+ <figure class="fig wide"><img src="img/pv-inotropy.jpg" alt="inotropy loops" onclick="lb(this)"><figcaption><b>ניסוי 6 – inotropy:</b> ↑כיווציות → ESPVR תלול יותר, ESV ↓, SV ↑, EF ↑ באותו EDV. ↓כיווציות – ההפך.</figcaption></figure>
+ <figure class="fig"><img src="img/preload-espvr.jpg" alt="preload ESPVR" onclick="lb(this)"><figcaption>כשהשאר קבוע, ↑preload מעלה גם את לחץ הדם – לכן לחץ הדם <b>אינו</b> מדד טוב ל-afterload.</figcaption></figure>
+ <figure class="fig"><img src="img/afterload-espvr.jpg" alt="afterload ESPVR" onclick="lb(this)"><figcaption>↑afterload מעלה לחץ ומוריד SV ו-EF – לכן לחץ הדם ו-EF <b>אינם</b> מדדים טובים לכיווציות.</figcaption></figure>
+ <figure class="fig"><img src="img/ees-contractility.jpg" alt="Ees" onclick="lb(this)"><figcaption>E<sub>es</sub> = שיפוע ה-ESPVR = המדד לכיווציות. "+" תלול, "−" שטוח.</figcaption></figure>
+ <figure class="fig"><img src="img/pv-rest-exercise.jpg" alt="rest exercise" onclick="lb(this)"><figcaption><b>מנוחה מול מאמץ:</b> במאמץ גם preload ↑, גם כיווציות ↑ וגם afterload ↑ – הלולאה גדולה בהרבה.</figcaption></figure>
+</div>
+<div class="quizref">"הגדלת התנגודת הפריפרית, כלומר העלאת AFTERLOAD – מגדילה את נפח הפעימה" – <b>לא נכון</b> (זה המשפט השגוי שהיה צריך לסמן). עליית afterload <b>מקטינה</b> SV ומגדילה ESV. (אחרי כמה פעימות ה-ESV הגדול מעלה את ה-EDV, פרנק-סטרלינג מפצה חלקית ומגיעים לשיווי משקל חדש.)</div>
+<div class="mem"><b>Preload</b> מזיז את הלולאה <b>ימינה</b> (יותר נפח). <b>Afterload</b> מזיז <b>למעלה</b> (יותר לחץ). <b>Inotropy</b> מזיז <b>שמאלה</b> (פחות נפח שאריתי) ומשנה את <b>השיפוע</b>. רק אינוטרופיה משנה את ה-ESPVR.</div>
+
+<h3>6.4 מאפייני האפקט האינוטרופי (ניסוי 7)</h3>
+<div class="grid2">
+ <div class="box">
+  <p><b>הנחה:</b> תפקיד האפקט האינוטרופי הוא להביא כמה שיותר תאים ל<b>סנכרון</b>. הגורם המגביל בכיווץ הוא סידן → המנגנון יעבוד דרך סידן.</p>
+  <p><b>קטכולאמינים (NE) על β<sub>1</sub> → G<sub>s</sub> → ↑cAMP → PKA מזרחן:</b></p>
+  <ul>
+   <li><b>תעלות Ca²⁺ מסוג L</b> בממברנה → יותר סידן נכנס בכל AP → יותר CICR → <b>↑ כיווץ</b>.</li>
+   <li><b>Phospholamban</b> → מסיר את העיכוב מ-<b>SERCA</b> → סידן נשאב ל-SR <b>מהר יותר</b> → <b>↑ הרפיה</b> (lusitropy) + יותר סידן אגור לפעימה הבאה.</li>
+   <li><b>Troponin I</b> → מחזיר את העיכוב על קשר אקטין-מיוזין מהר יותר → הרפיה מהירה.</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4>למה זה גאוני</h4>
+  <ul>
+   <li>סידן נכנס מהר יותר בהתחלה <b>ויוצא מהר יותר בהמשך</b> → פעימה חזקה, מסונכרנת <b>וקצרה</b>.</li>
+   <li>הרפיה מהירה = <b>מילוי יעיל</b> גם כשהדיאסטולה קצרה → מאפשרת <b>הגברת קצב</b> בלי לאבד את המילוי.</li>
+   <li>לכן הסימפתטי מגביר <b>הספק</b> (CO) גם אם SV יורד מעט בקצב גבוה: CO = SV × HR, ושניהם נדחפים יחד.</li>
+  </ul>
+  <div class="figs"><figure class="fig wide"><img src="img/catecholamine-ca.jpg" alt="catecholamine mechanism" onclick="lb(this)"><figcaption>מסלול β → cAMP → PKA: זרחון תעלת Ca, פוספולמבאן (SERCA) וטרופונין I.</figcaption></figure></div>
+ </div>
+</div>
+</section>
+<!-- ============================================================ -->
+<section id="vess" style="--c:var(--vess)">
+<h2>7. כלי הדם והמודינמיקה <span class="en">Vessels: Pressure, Flow, Resistance</span></h2>
+
+<div class="box intro">
+ <p><b>משפט המפתח:</b> "זרימת דם נקבעת על ידי זרימה, התנגדות ולחץ." כל השאלות בפרק הזה חוזרות לנוסחה אחת – <span class="f">Q = ΔP / R</span> – ולעובדה שההתנגדות תלויה <b>ברדיוס בחזקת 4</b>, ולכן הגוף שולט בזרימה דרך קוטר העורקיקים.</p>
+</div>
+
+<h3>7.1 סוגי כלי הדם ותפקידם</h3>
+<table>
+ <tr><th>כלי</th><th>מבנה הדופן</th><th>תפקיד פיזיולוגי</th><th>נתון לזכור</th></tr>
+ <tr><td><b>עורקים</b> <i class="en">(Arteries)</i></td><td>דופן עבה, הרבה <b>רקמה אלסטית</b> (אאורטה) ושריר חלק</td><td><b>שמירה על לחץ דם</b>; הפיכת זרימה פעימתית לרציפה (Windkessel – מנגנון אבי העורקים)</td><td>אאורטה: קוטר 25 מ"מ, דופן 2 מ"מ; ~11% מנפח הדם</td></tr>
+ <tr><td><b>עורקיקים</b> <i class="en">(Arterioles)</i></td><td>דופן עם <b>שריר חלק</b> יחסית עבה לקוטר</td><td><b>כלי ההתנגדות</b> – המקום העיקרי של <b>נפילת הלחץ</b>; מווסתים את חלוקת הדם בין איברים ואת TPR</td><td>קוטר 30 µm; שינוי רדיוס קטן = שינוי R ענק</td></tr>
+ <tr><td><b>נימים</b> <i class="en">(Capillaries)</i></td><td><b>אנדותל + ממברנת בסיס</b> בלבד (דופן 0.5 µm)</td><td><b>חילוף חומרים</b> – לחץ נמוך, זרימה איטית, שטח חתך עצום</td><td>קוטר 8 µm; שטח חתך כולל ~1,400 סמ"ר; רק ~5% מהדם</td></tr>
+ <tr><td><b>ורידונים</b> <i class="en">(Venules)</i></td><td>דק מאוד</td><td>חילוף חומרים (הצד הוורידי של הנימה חדיר יותר), איסוף</td><td></td></tr>
+ <tr><td><b>ורידים</b> <i class="en">(Veins)</i></td><td>דופן דקה, מעט אלסטין, מסתמים</td><td><b>כלי קיבולת</b> – מאגר דם לשעת צורך; היענות גבוהה (×20 מעורקים)</td><td><b>~67% מנפח הדם</b>; vena cava 30 מ"מ עם דופן 1.5 מ"מ</td></tr>
+</table>
+<div class="figs">
+ <figure class="fig wide"><img src="img/vessel-walls.jpg" alt="vessel walls" onclick="lb(this)"><figcaption><b>מבנה הדופן לאורך העץ הוסקולרי:</b> אלסטין בעורקים הגדולים, שריר חלק בעורקיקים, רק אנדותל בנימים.<span class="credit">Koeppen &amp; Stanton</span></figcaption></figure>
+ <figure class="fig"><img src="img/blood-volume-table.jpg" alt="blood volume" onclick="lb(this)"><figcaption><b>שטח חתך מול % נפח:</b> הנימים – שטח חתך עצום אבל 5% מהנפח (קצרים!); הוורידים – 67% (ארוכים, רחבים, נמתחים).</figcaption></figure>
+ <figure class="fig"><img src="img/capillary-bed.jpg" alt="capillary bed" onclick="lb(this)"><figcaption><b>שדה נימים:</b> עורקיק → מטא-עורקיק עם סוגרים קדם-נימיים → נימים → ורידון. AV shunt עוקף את הנימים.</figcaption></figure>
+ <figure class="fig"><img src="img/co-distribution.jpg" alt="CO distribution" onclick="lb(this)"><figcaption><b>חלוקת CO לפי צרכים:</b> במנוחה (2.5 ל'/דקה במודל) מול מאמץ (10) – השריר מקבל פי 20, המוח קבוע.</figcaption></figure>
+</div>
+
+<h3>7.2 לחץ, זרימה, התנגדות <span class="key">חובה</span></h3>
+<div class="grid2">
+ <div class="box">
+  <div class="formula"><span class="f">Q = ΔP / R</span> &nbsp;&nbsp; <span class="f">R = ΔP / Q</span></div>
+  <ul>
+   <li><b>זרימה (Q, Flow)</b> – נפח ליחידת זמן (מ"ל/דקה). תלויה <b>ישירות בהפרש הלחצים</b> בין הכניסה ליציאה (P<sub>i</sub> − P<sub>o</sub>), <b>לא</b> בלחץ המוחלט.</li>
+   <li><b>התנגדות (R)</b> – לא נמדדת ישירות; <b>מחושבת</b> מהפרש הלחצים והזרימה. נקבעת ע"י תכונות הצינור ונוזל הדם.</li>
+   <li>ברמת המערכת: <span class="f">CO = (MAP − CVP) / TPR</span>, ומכאן <span class="f">TPR = (MAP − RAP) / CO</span> ו-<span class="f">MAP ≈ CO × TPR</span>.</li>
+  </ul>
+  <div class="formula"><span class="f">R = 8ηL / (πr⁴)</span><br><small>פואזיי: צמיגות η, אורך L, רדיוס r</small></div>
+  <ul>
+   <li><b>הרדיוס הוא הגורם הדומיננטי</b>: הכפלת הרדיוס → ההתנגדות קטנה פי 16 והזרימה גדלה פי 16. באיור מההרצאה: d=1 → 1 מ"ל/דקה, d=2 → 16, d=4 → 256.</li>
+   <li>לכן <b>השליטה הביולוגית על זרימת הדם נעשית ע"י שינוי רדיוס כלי הדם</b> (העורקיקים).</li>
+   <li>צמיגות ואורך משתנים מעט בתנאים פיזיולוגיים.</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4>המטוקריט וצמיגות הדם <i class="en">(Hematocrit &amp; Viscosity)</i></h4>
+  <ul>
+   <li>הצמיגות (η) של הדם היא פי ~3 ממים, והגורם העיקרי לה הוא <b>המטוקריט</b> (אחוז נפח הכדוריות, ~45%). גם חלבוני פלזמה תורמים.</li>
+   <li>↑המטוקריט (פוליציטמיה, התייבשות) → ↑צמיגות <b>באופן לא ליניארי</b> → ↑R → ↓זרימה, ↑עבודת הלב. ↓המטוקריט (אנמיה) → ↓צמיגות → זרימה קלה יותר, אבל פחות נשיאת חמצן.</li>
+   <li>בכלים הקטנים מאוד הצמיגות האפקטיבית יורדת (אפקט Fåhræus–Lindqvist) – הכדוריות מסתדרות במרכז.</li>
+  </ul>
+  <h4>התנגדות בטור ובמקביל</h4>
+  <ul>
+   <li><b>בטור</b> (אאורטה → עורקים → עורקיקים → נימים → ורידים): R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + … – העורקיקים תורמים את רוב ההתנגדות.</li>
+   <li><b>במקביל</b> (האיברים השונים, מיליארדי הנימים): 1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + … – ההתנגדות הכוללת <b>קטנה</b> מכל אחת לבד. לכן, למרות שכל נימה בודדת צרה מאוד, ההתנגדות הכוללת של הנימים קטנה מזו של העורקיקים.</li>
+  </ul>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig"><img src="img/flow-gradient.jpg" alt="flow gradient" onclick="lb(this)"><figcaption>הזרימה נקבעת ע"י <b>מפל הלחץ</b> (P1−P2) וההתנגדות.</figcaption></figure>
+ <figure class="fig"><img src="img/flow-vs-pressure.jpg" alt="flow vs pressure" onclick="lb(this)"><figcaption>אותו הפרש לחץ: צינור רחב = זרימה גבוהה (R נמוך); צינור צר = זרימה נמוכה (R גבוה). השיפוע = 1/R.</figcaption></figure>
+ <figure class="fig"><img src="img/radius-fourth.jpg" alt="r^4" onclick="lb(this)"><figcaption>הזרימה גדלה <b>בחזקה רביעית</b> של הרדיוס: 1 → 16 → 256.</figcaption></figure>
+ <figure class="fig"><img src="img/pump-circuit.jpg" alt="pump circuit" onclick="lb(this)"><figcaption>המערכת כמעגל: משאבה, לחץ עורקי, התנגדות פריפרית, לחץ ורידי.</figcaption></figure>
+</div>
+
+<h3>7.3 מהירות זרימה, שטח חתך וברנולי</h3>
+<div class="grid2">
+ <div class="box">
+  <div class="formula"><span class="f">Q = v × A</span><br><small>זרימה = מהירות × שטח חתך</small></div>
+  <ul>
+   <li>הזרימה (Q) <b>שווה בכל רמה</b> של המערכת (מה שנכנס לאאורטה עובר דרך כל הנימים וחוזר ב-vena cava) – אבל <b>שטח החתך הכולל</b> (סכום שטחי כל הכלים <b>במקביל</b>) שונה מאוד.</li>
+   <li>לכן <b>המהירות הפוכה לשטח החתך</b>, ולא תלויה במרחק מהלב: אאורטה (~4.5 סמ"ר) – ~50 ס"מ/שנ'; נימים (~1,400–4,500 סמ"ר) – ~0.03–0.1 ס"מ/שנ' (איטי = זמן לחילוף חומרים); vena cava – המהירות שוב עולה (אבל פחות מהאאורטה, כי שטח החתך הוורידי גדול יותר).</li>
+  </ul>
+  <div class="figs"><figure class="fig wide"><img src="img/velocity-area.jpg" alt="velocity area" onclick="lb(this)"><figcaption>אותה זרימה (10 מ"ל/שנ'): בחלק הרחב המהירות יורדת, בחלק הצר – עולה.</figcaption></figure></div>
+ </div>
+ <div class="box">
+  <h4>משוואת ברנולי <i class="en">(Bernoulli Equation)</i></h4>
+  <div class="formula"><span class="f">P + ½ρv² + ρgh = const</span></div>
+  <ul>
+   <li>האנרגיה הכוללת של נוזל זורם נשמרת: <b>לחץ</b> (אנרגיה פוטנציאלית של לחץ) + <b>אנרגיה קינטית</b> (½ρv²) + אנרגיית גובה.</li>
+   <li>המסקנה החשובה: <b>במקום שבו המהירות עולה (היצרות) – הלחץ הצידי יורד.</b> "אפקט ברנולי".</li>
+   <li>דוגמאות: בהיצרות מסתם אאורטלי הדם מואץ ומופיע מפל לחץ (gradient); בעורק מוצר הלחץ הצידי בהיצרות נמוך – מה שעלול לסייע לקריסת הכלי; האנרגיה הקינטית של הדם היוצא מהחדר היא חלק מהעבודה.</li>
+   <li>רוב נפילת הלחץ במערכת אינה מברנולי אלא מ<b>חיכוך</b> (התנגדות) – אבל ברנולי מסביר למה "לחץ" ו"מהירות" הם לא אותו דבר.</li>
+  </ul>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig tall"><img src="img/area-velocity-profile.jpg" alt="area velocity" onclick="lb(this)"><figcaption><b>שטח חתך (למעלה) ומהירות (למטה)</b> לאורך המערכת: תמונת ראי – שיא השטח בנימים = שפל המהירות.</figcaption></figure>
+ <figure class="fig tall"><img src="img/pressure-profile.jpg" alt="pressure profile" onclick="lb(this)"><figcaption><b>נפילת הלחץ</b> לאורך המערכת: הנפילה החדה ביותר <b>בעורקיקים</b> (כלי ההתנגדות). הפעימתיות נעלמת בנימים. בוורידים הלחץ נמוך ואין "עלייה מקבילה" – כי הם במורד הזרם של ההתנגדות ויש להם היענות גבוהה.</figcaption></figure>
+</div>
+
+<h3>7.4 היענות ולחץ הדם העורקי</h3>
+<div class="grid2">
+ <div class="box">
+  <h4>היענות <i class="en">(Compliance)</i></h4>
+  <div class="formula"><span class="f">C = ΔV / ΔP</span></div>
+  <ul>
+   <li>כמה נפח כלי יכול לקלוט עבור עליית לחץ נתונה. <b>ורידים</b>: היענות גבוהה מאוד (פי ~20 מעורקים) – קולטים נפח גדול בלחץ נמוך = <b>כלי קיבולת</b>. <b>עורקים</b>: היענות נמוכה – שינוי נפח קטן מעלה את הלחץ מאוד.</li>
+   <li><b>היענות עורקית ו-Windkessel:</b> בסיסטולה האאורטה <b>נמתחת</b> ואוגרת חלק מה-SV; בדיאסטולה היא <b>מתכווצת חזרה</b> ודוחפת את הדם הלאה → הזרימה בנימים <b>רציפה</b> למרות שהלב פעימתי, והלחץ הדיאסטולי לא צונח לאפס.</li>
+   <li><b>עורקים קשיחים</b> (גיל, טרשת): פחות אגירה → לחץ סיסטולי גבוה יותר, דיאסטולי נמוך יותר → <b>לחץ דופק רחב</b>.</li>
+  </ul>
+  <div class="figs"><figure class="fig wide"><img src="img/compliance.jpg" alt="compliance" onclick="lb(this)"><figcaption>A–B: עורק היעני אוגר דם בסיסטולה ומשחרר בדיאסטולה – זרימה רציפה. C–D: עורק קשיח – זרימה פעימתית, נעצרת בדיאסטולה.</figcaption></figure></div>
+ </div>
+ <div class="box">
+  <h4>לחץ הדם העורקי – הגדרות</h4>
+  <ul>
+   <li><b>סיסטולי</b> (~120 mmHg) – השיא בזמן הפליטה. <b>דיאסטולי</b> (~80) – השפל לפני הפליטה הבאה.</li>
+   <li><b>לחץ דופק</b> <i class="en">(Pulse pressure)</i> = סיסטולי − דיאסטולי ≈ 40. נקבע ע"י <b>SV</b> (↑SV → ↑PP) ו<b>היענות העורקים</b> (↓היענות → ↑PP).</li>
+   <li><b>לחץ עורקי ממוצע</b> <i class="en">(MAP)</i> <span class="key">חובה</span> – הממוצע לאורך הזמן (אינטגרל). כיוון שהדיאסטולה ארוכה יותר, הוא קרוב יותר לדיאסטולי:</li>
+  </ul>
+  <div class="formula"><span class="f">MAP ≈ P<sub>d</sub> + ⅓(P<sub>s</sub> − P<sub>d</sub>)</span> &nbsp;&nbsp; <span class="f">MAP = CO × TPR</span> (+CVP)</div>
+  <ul>
+   <li>120/80 → MAP ≈ 80 + 40/3 ≈ 93 mmHg.</li>
+   <li><b>מה קובע את לחץ הדם?</b> גורמים פיזיולוגיים: <b>CO</b> (HR × SV) ו-<b>TPR</b>. גורמים פיזיקליים: נפח הדם העורקי והיענות העורקים. כל שינוי ב-HR, SV, TPR, נפח או היענות משנה את הלחץ.</li>
+   <li><b>מדידה:</b> שרוול מנופח מעל הסיסטולי → אין זרימה, שקט. שחרור הדרגתי: מתחת לסיסטולי הדם עובר במערבולת ונשמעים <b>קולות קורוטקוף</b>; מתחת לדיאסטולי הזרימה למינרית והקולות נעלמים.</li>
+  </ul>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig"><img src="img/pulse-pressure.jpg" alt="pulse pressure" onclick="lb(this)"><figcaption>סיסטולי, דיאסטולי, לחץ דופק ו-MAP (הממוצע האינטגרלי).</figcaption></figure>
+ <figure class="fig"><img src="img/bp-determinants.jpg" alt="BP determinants" onclick="lb(this)"><figcaption>CO ו-TPR קובעים את הנפח העורקי; יחד עם ההיענות – את הלחץ.</figcaption></figure>
+ <figure class="fig"><img src="img/bp-measurement.jpg" alt="BP measurement" onclick="lb(this)"><figcaption>מדידת לחץ דם: קולות קורוטקוף בין הסיסטולי לדיאסטולי.</figcaption></figure>
+</div>
+<div class="mem">MAP = "דיאסטולי + שליש דופק". TPR = "התנגדות של כל העורקיקים במקביל". CO × TPR = MAP – כמו חוק אוהם: V = I × R (לחץ = זרם × התנגדות).</div>
+</section>
+<!-- ============================================================ -->
+<section id="cap" style="--c:var(--vess)">
+<h2>8. חילוף חומרים בנימים וכוחות סטרלינג <span class="en">Capillary Exchange &amp; Starling Forces</span></h2>
+
+<div class="box intro">
+ <p>כל המערכת קיימת בשביל הרגע הזה: דם זורם לאט, בלחץ נמוך, דרך צינור שדופנו היא שכבת אנדותל אחת. שני תהליכים נפרדים: <b>דיפוזיה</b> (גזים ומומסים – הדרך העיקרית לחילוף חומרים) ו<b>פילטרציה/ספיגה</b> (תנועת <b>מים</b> עם מומסים דרך נקבוביות – קובעת את מאזן הנוזלים, לא את ההזנה).</p>
+</div>
+
+<h3>8.1 דופן הנימה ומנגנוני המעבר</h3>
+<div class="grid2">
+ <div class="box">
+  <h4>פרמיאביליות (חדירות) דופן הנימה</h4>
+  <ul>
+   <li><b>משתנה בין איברים:</b> אפסית במוח (BBB – tight junctions), בינונית בשריר, גדולה מאוד בכבד ובכליה (נימים מחוררים/סינוסואידים).</li>
+   <li><b>משתנה לאורך הנימה:</b> גבוהה יותר <b>בצד הוורידי</b> (יותר נקבוביות).</li>
+   <li>תלויה בסוג הנקבוביות ובגודלן, ובמבנה <b>ממברנת הבסיס</b> שמסננת לפי <b>גודל ומטען</b>.</li>
+  </ul>
+  <h4>ארבעה מנגנוני מעבר</h4>
+  <ol>
+   <li><b>דיפוזיה</b> – העיקרי. גזים ומומסים אפולריים (O₂, CO₂) דרך הממברנה; מים ומומסים קטנים מסיסים במים (גלוקוז, יונים) דרך <b>נקבוביות</b>.</li>
+   <li><b>פילטרציה</b> – תנועת מים (bulk flow) דרך נקבוביות לפי לחצים.</li>
+   <li><b>פינוציטוזה</b> – בועיות; מולקולות גדולות.</li>
+   <li><b>קליטה דרך רצפטורים</b>.</li>
+  </ol>
+ </div>
+ <div class="box">
+  <h4>האנדותל כאיבר פעיל (ואזו-אקטיבי)</h4>
+  <ul>
+   <li><b>מרחיבים (vasodilation):</b> <b><i class="en">Nitric Oxide (NO)</i></b> – מופרש בתגובה למאמץ גזירה ולאצטילכולין, מפעיל גואנילט ציקלאז → cGMP → הרפיית שריר חלק; <b><i class="en">Prostacyclin (PGI₂)</i></b> – דרך cAMP.</li>
+   <li><b>מכווץ (vasoconstriction):</b> <b><i class="en">Endothelin</i></b>.</li>
+   <li>גם מטבוליטים של הרקמה (אדנוזין, H⁺, CO₂, K⁺) מרחיבים – "בקרה מקומית".</li>
+  </ul>
+  <div class="quizref">"בהקשר לבקרה על תפקוד כלי הדם, הפרשת NO מתאי האנדותל תגרום באופן ישיר ל:" – <b>הרחבה של כלי הדם</b>.</div>
+  <div class="figs"><figure class="fig wide"><img src="img/endothelium.jpg" alt="endothelium" onclick="lb(this)"><figcaption>האנדותל: NO ו-PGI₂ → הרפיה; אדנוזין, H⁺, CO₂, K⁺ מהרקמה → הרפיה.</figcaption></figure></div>
+ </div>
+</div>
+
+<h3>8.2 דיפוזיה וחוק פיק <i class="en">(Fick's Law)</i></h3>
+<div class="grid2">
+ <div class="box">
+  <div class="formula"><span class="f">J = −P·S·(C<sub>o</sub> − C<sub>i</sub>)</span> &nbsp; או &nbsp; <span class="f">J = P·S·ΔC</span></div>
+  <ul>
+   <li><b>J</b> – כמות חומר ליחידת זמן; <b>P</b> – חדירות הנימה לחומר; <b>S</b> – שטח פני הנימה; <b>ΔC</b> – הפרש הריכוזים בין הדם לנוזל הבין-תאי.</li>
+   <li>קצב הדיפוזיה <b>ישר</b> לשטח, לחדירות ולמפל הריכוז; <b>הפוך</b> למרחק הדיפוזיה (עובי הדופן + מרחק לתא).</li>
+   <li>גורמים שקובעים: מסיסות בשומן (גזים עוברים ישר דרך הממברנה), גודל ומספר הנקבוביות, מטען, מרחק מהאנדותל לתא המטרה, <b>מהירות הזרימה</b> בנימה.</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4><i class="en">Flow-limited</i> מול <i class="en">Diffusion-limited</i></h4>
+  <ul>
+   <li><b>מוגבל-זרימה</b>: חומר שחודר בקלות (O₂, CO₂, גזים מסיסים בשומן, מים) – מתאזן כבר בתחילת הנימה. הדרך היחידה להעביר יותר היא <b>להגדיל את הזרימה</b> (לפתוח עורקיקים, לגייס נימים). למשל: אספקת חמצן לשריר שלד פעיל.</li>
+   <li><b>מוגבל-דיפוזיה</b>: חומר שעובר לאט (מולקולות גדולות/פולריות, או כשהמרחק גדול) – לא מתאזן גם עד סוף הנימה. מגבילים אותו החדירות, השטח <b>והמרחק</b>. למשל: אספקת גלוקוז לפיברובלסטים בגיד (מעט נימים, מרחק גדול), חילוף גזים בריאה עם בצקת/פיברוזיס.</li>
+   <li>השאלה מההרצאה: לתאי שריר הצמודים לנימה – חמצן, גלוקוז ולקטט כולם מוגבלי-זרימה; לפיברובלסט בגיד – הגלוקוז מוגבל-דיפוזיה.</li>
+  </ul>
+  <div class="figs"><figure class="fig wide"><img src="img/flow-diffusion-limited.jpg" alt="flow vs diffusion limited" onclick="lb(this)"><figcaption>A – מוגבל זרימה: הריכוז בנימה צונח מהר, מתאזן. B – מוגבל דיפוזיה: הריכוז נשאר גבוה עד הסוף.</figcaption></figure></div>
+ </div>
+</div>
+
+<h3>8.3 פילטרציה וספיגה: היפותזת סטרלינג <span class="key">חובה</span></h3>
+<div class="box">
+ <div class="formula"><span class="f">Net filtration = K<sub>f</sub> · [(P<sub>c</sub> − P<sub>i</sub>) − σ(π<sub>c</sub> − π<sub>i</sub>)]</span><br><small>בהרצאה: <span class="f">M = k[(P<sub>c</sub> + π<sub>i</sub>) − (P<sub>i</sub> + π<sub>c</sub>)]</span> – M חיובי = פילטרציה החוצה, M שלילי = ספיגה פנימה</small></div>
+ <table>
+  <tr><th>כוח</th><th>מה זה</th><th>כיוון</th><th>ערך טיפוסי</th><th>מה משנה אותו</th></tr>
+  <tr><td><b>P<sub>c</sub></b> – לחץ הידרוסטטי בנימה</td><td>לחץ הדם בתוך הנימה. הכוח העיקרי שדוחף נוזל <b>החוצה</b>.</td><td class="up">החוצה (+)</td><td>~35 mmHg בצד העורקי → ~15 בצד הוורידי (ממוצע ~17–25)</td><td>נקבע בעיקר ע"י <b>קוטר העורקיקים והסוגרים</b> (הרחבה → ↑P<sub>c</sub>); וגם ע"י <b>הלחץ הוורידי</b> (↑לחץ ורידי → ↑P<sub>c</sub> ישירות – אי-ספיקת לב, חסימה ורידית, עמידה ממושכת)</td></tr>
+  <tr><td><b>P<sub>i</sub></b> – לחץ הידרוסטטי בין-תאי</td><td>לחץ הנוזל ברקמה.</td><td>פנימה (−) אם חיובי</td><td>~0 עד מעט שלילי (−3 mmHg) ברקמה תקינה – <b>קטן מאוד, השפעה זניחה</b></td><td>עולה בבצקת (מגביל אותה), בדלקת</td></tr>
+  <tr><td><b>π<sub>c</sub></b> – לחץ אונקוטי (קולואיד-אוסמוטי) של הפלזמה</td><td>משיכת מים פנימה ע"י <b>חלבוני הפלזמה</b>, בעיקר <b>אלבומין</b> (הכי רב ומספח קטיונים – אפקט גדול מריכוזו, Gibbs–Donnan). הכוח העיקרי שמחזיר נוזל <b>פנימה</b>.</td><td class="down">פנימה (−)</td><td>~25–28 mmHg, <b>קבוע לאורך הנימה</b></td><td>↓ בהיפואלבומינמיה: תת-תזונה, מחלת כבד (ייצור), סינדרום נפרוטי (איבוד בשתן), כוויות</td></tr>
+  <tr><td><b>π<sub>i</sub></b> – לחץ אונקוטי בין-תאי</td><td>מעט חלבון שדלף לרקמה.</td><td>החוצה (+)</td><td>~3–8 mmHg</td><td>עולה כשהחדירות עולה (דלקת, אלרגיה) או כשהלימפה חסומה</td></tr>
+  <tr><td><b>K<sub>f</sub></b> – מקדם הפילטרציה</td><td>חדירות × שטח הדופן.</td><td>מכפיל</td><td></td><td>↑ בדלקת, היסטמין, כוויות</td></tr>
+  <tr><td><b>σ</b> – מקדם החזרה (reflection)</td><td>כמה הדופן "מחזירה" את החלבון: 0 למים (עובר חופשי), 1 לאלבומין בנימה תקינה.</td><td></td><td>~0.9</td><td>↓ כשהדופן דולפת חלבון</td></tr>
+ </table>
+ <p><b>הלחץ האוסמוטי:</b> <span class="f">π = σRT(C<sub>i</sub> − C<sub>o</sub>)</span> – נקבע ע"י הפרש ריכוז המומסים שלא עוברים (חלבונים). מלחים עוברים חופשי ולכן לא תורמים ללחץ האונקוטי לאורך הנימה. מצבים: היפר/היפו/איזו-אוסמוטי ביחס לפלזמה.</p>
+</div>
+
+<div class="figs">
+ <figure class="fig"><img src="img/starling-forces.jpg" alt="Starling forces" onclick="lb(this)"><figcaption><b>ארבעת כוחות סטרלינג</b> (Guyton): P<sub>c</sub> ו-π<sub>if</sub> החוצה; P<sub>if</sub> ו-π<sub>p</sub> פנימה.</figcaption></figure>
+ <figure class="fig"><img src="img/filtration-uptake.jpg" alt="filtration uptake" onclick="lb(this)"><figcaption><b>לאורך הנימה:</b> פילטרציה בצד העורקי (P<sub>c</sub> &gt; π<sub>c</sub>), ספיגה בצד הוורידי (P<sub>c</sub> &lt; π<sub>c</sub>).</figcaption></figure>
+ <figure class="fig"><img src="img/capillary-pressure.jpg" alt="capillary pressure" onclick="lb(this)"><figcaption><b>מה קובע את P<sub>c</sub>:</b> ההתנגדות הקדם-נימית (עורקיק + סוגר) מול ההתנגדות הבתר-נימית (ורידון). פתיחת העורקיק ↑P<sub>c</sub>; ↑לחץ ורידי ↑P<sub>c</sub>.</figcaption></figure>
+ <figure class="fig"><img src="img/lymph-10-90.jpg" alt="lymph" onclick="lb(this)"><figcaption><b>מאזן:</b> 32 mmHg הידרוסטטי בצד העורקי, 15 בצד הוורידי, 25 אונקוטי. ~90% מהנוזל המסונן נספג חזרה; <b>~10% חוזרים דרך הלימפה</b>.</figcaption></figure>
+ <figure class="fig"><img src="img/lymph-capillary.jpg" alt="lymph capillary" onclick="lb(this)"><figcaption><b>נימת לימפה:</b> קצוות עיוורים עם "דלתות" חד-כיווניות בין תאי האנדותל – קולטת נוזל וחלבון מהרקמה.</figcaption></figure>
+ <figure class="fig"><img src="img/starling-case-osmotic.jpg" alt="osmotic case" onclick="lb(this)"><figcaption><b>מקרה 1 – בעיה אוסמוטית:</b> π<sub>c</sub>−π<sub>i</sub> ירד (הדם "היפואוסמוטי" – חסר אלבומין). שטח 1 (פילטרציה) &gt; שטח 2 (ספיגה) → עודף נוזל ברקמה → <b>בצקת</b>.</figcaption></figure>
+ <figure class="fig"><img src="img/starling-case-hydrostatic.jpg" alt="hydrostatic case" onclick="lb(this)"><figcaption><b>מקרה 2 – בעיה הידרוסטטית:</b> P<sub>c</sub>−P<sub>i</sub> גבוה לאורך כל הנימה (↑לחץ ורידי, למשל אי-ספיקת לב / פקקת). שוב שטח 1 &gt; 2 → <b>בצקת</b>.</figcaption></figure>
+</div>
+
+<div class="quizref">"תהליך הפילטרציה בנימים תלוי במאזן הכוחות ההידרוסטטיים והאוסמוטיים" – המשפטים הנכונים: (1) <b>ברקמה תקינה הלחץ ההידרוסטטי במרכיב הבין-תאי קטן מאוד ואין לו השפעה ניכרת</b>; (2) <b>ירידה בכמות האלבומין → ירידת הלחץ האוסמוטי בנימים → בצקת</b>; (3) <b>עלייה בלחץ הדם בוורידים → עלייה בלחץ ההידרוסטטי בנימים → בצקת</b>. <b>לא נכון:</b> "כל הנוזל שיוצא בפילטרציה בצד העורקי חוזר בספיגה בצד הוורידי" – רק ~90%; השאר חוזר דרך <b>הלימפה</b>. גם לא נכון: "ירידה בלחץ בוורידים תגרום לבצקת" (ההפך).</div>
+
+<div class="grid2">
+ <div class="box">
+  <h4>מערכת הלימפה <i class="en">(Lymphatic System)</i></h4>
+  <ul>
+   <li>נימי לימפה עיוורים ברקמה קולטים את <b>עודף הנוזל (~10% מהסינון, 2–4 ליטר/יום) ואת החלבונים שדלפו</b> – זו הדרך היחידה של חלבון לחזור לדם. בלי זה π<sub>i</sub> היה עולה בהדרגה ומושך עוד נוזל.</li>
+   <li>הזרימה: כיווץ שריר חלק בכלי הלימפה + "משאבת" שרירי השלד + מסתמים חד-כיווניים → צינור בית החזה → וריד תת-בריחי שמאלי.</li>
+   <li>כשהלימפה חסומה (ניתוח, גידול, פילריאזיס) → <b>לימפאדמה</b> – בצקת עשירה בחלבון.</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4>בצקת <i class="en">(Edema)</i> <span class="key">חובה</span></h4>
+  <p>"כל הפרה של אחד המרכיבים בהיפותזת סטרלינג שגורמת לעודף יציאת נוזלים מכלי הדם" – כשהפילטרציה עולה על יכולת הניקוז של הלימפה.</p>
+  <table>
+   <tr><th>מנגנון</th><th>דוגמאות</th></tr>
+   <tr><td><b>↑ P<sub>c</sub></b> (הידרוסטטי)</td><td>אי-ספיקת לב (↑לחץ ורידי), פקקת ורידים, הריון, עמידה ממושכת, עודף נוזלים</td></tr>
+   <tr><td><b>↓ π<sub>c</sub></b> (אונקוטי)</td><td>היפואלבומינמיה: סינדרום נפרוטי, שחמת כבד, תת-תזונה (קוושיורקור), כוויות</td></tr>
+   <tr><td><b>↑ חדירות</b> (K<sub>f</sub>, ↓σ)</td><td>דלקת, אלרגיה (היסטמין), כוויות, ספסיס – בצקת עשירה בחלבון</td></tr>
+   <tr><td><b>חסימת לימפה</b></td><td>לימפאדמה אחרי כריתת בלוטות, גידול, פילריאזיס</td></tr>
+  </table>
+ </div>
+</div>
+<div class="mem">שני כוחות גדולים נלחמים: <b>P<sub>c</sub></b> דוחף החוצה (35 → 15), <b>π<sub>c</sub></b> מושך פנימה (25 קבוע). בצד העורקי P<sub>c</sub> מנצח = פילטרציה; בצד הוורידי π<sub>c</sub> מנצח = ספיגה. שני הכוחות הבין-תאיים (P<sub>i</sub>, π<sub>i</sub>) קטנים. בצקת = "יותר יוצא ממה שחוזר (כולל הלימפה)".</div>
+</section>
+<!-- ============================================================ -->
+<section id="ans" style="--c:var(--ctrl)">
+<h2>9. בקרה עצבית ורפלקסים <span class="en">Autonomic Control &amp; Reflexes</span></h2>
+
+<div class="box intro">
+ <p><b>תרשים השליטה מההרצאה:</b> שליטה על הספקת הדם = שליטה על <b>פעולת הלב</b> + שליטה על <b>כלי הדם</b>. בכל אחת יש <b>בקרה מקומית</b> (intrinsic – בתוך האיבר: פרנק-סטרלינג, מטבוליטים) ו<b>בקרה סיסטמית</b> (extrinsic – עצבים והורמונים), והן משולבות. הדוגמה: במנוחה CO 2.5 ל'/דקה (במודל) ובמאמץ 10 – השריר מקבל פי 20, המוח אותו דבר, הכליה פחות.</p>
+</div>
+
+<h3>9.1 מערכת העצבים האוטונומית <i class="en">(Autonomic Nervous System)</i> <span class="key">חובה</span></h3>
+<table>
+ <tr><th></th><th>סימפתטי <i class="en">(Sympathetic)</i></th><th>פרה-סימפתטי <i class="en">(Parasympathetic)</i></th></tr>
+ <tr><td>מוצא</td><td>חוט שדרה T1–T5 → גנגליונים סימפתטיים (כולל גנגליון stellate) → עצבים לבביים</td><td>גזע המוח (medulla) → <b>עצב הוואגוס</b> (X) → גנגליונים בלב</td></tr>
+ <tr><td>מוליך עצבי</td><td><b><i class="en">Norepinephrine</i></b> (ומהאדרנל: אדרנלין לדם)</td><td><b><i class="en">Acetylcholine</i></b></td></tr>
+ <tr><td>רצפטור בלב</td><td><b>β<sub>1</sub></b> אדרנרגי → G<sub>s</sub> → ↑cAMP → PKA</td><td><b>M<sub>2</sub></b> מוסקריני → G<sub>i</sub> → ↓cAMP + פתיחת K<sub>ACh</sub></td></tr>
+ <tr><td>עצבוב</td><td><b>עליות וחדרים</b> (גם SAN, AVN)</td><td>בעיקר <b>SAN, AVN ועליות</b>; עצבוב החדרים דל</td></tr>
+ <tr><td>כרונוטרופי (קצב)</td><td class="up">↑ (↑I<sub>f</sub>, ↑I<sub>Ca</sub> – שלב 4 תלול)</td><td class="down">↓ (היפרפולריזציה, ↓I<sub>f</sub>, ↓I<sub>Ca</sub>)</td></tr>
+ <tr><td>דרומוטרופי (הולכה ב-AVN)</td><td class="up">↑ (PR מתקצר)</td><td class="down">↓ (PR מתארך; חסם AV)</td></tr>
+ <tr><td>אינוטרופי (כיווציות)</td><td class="up">↑ עליות וחדרים (זרחון תעלות Ca, פוספולמבאן)</td><td class="down">↓ בעיקר בעליות; <b>השפעה מועטה על החדרים</b></td></tr>
+ <tr><td>לוזיטרופי (הרפיה)</td><td class="up">↑</td><td class="same">–</td></tr>
+ <tr><td>כלי דם</td><td>כיווץ עורקיקים (α<sub>1</sub>) → ↑TPR; כיווץ ורידים → ↑החזר ורידי; β<sub>2</sub> בשריר – הרחבה</td><td>כמעט ללא עצבוב של כלי דם (חוץ מכמה אזורים)</td></tr>
+ <tr><td>מי דומיננטי במנוחה</td><td colspan="2"><b>הפרה-סימפתטי.</b> קצב SAN פנימי ~100; הוואגוס מוריד ל-~70. הסרת שניהם (לב מושתל) → ~100.</td></tr>
+</table>
+<div class="grid2">
+ <div class="box">
+  <h4>שלושת ה-"טרופים" <span class="key">חובה</span></h4>
+  <ul>
+   <li><b>Chrono</b>tropic – <b>קצב</b> (chronos = זמן): פועל על SAN.</li>
+   <li><b>Ino</b>tropic – <b>כוח כיווץ</b> (inos = סיב): פועל על המיוציטים (סידן).</li>
+   <li><b>Dromo</b>tropic – <b>מהירות הולכה</b> (dromos = מסלול): פועל על AVN.</li>
+   <li>(Lusitropic – מהירות הרפיה.)</li>
+  </ul>
+  <div class="mem"><b>Chrono</b> = שעון (קצב). <b>Ino</b> = "אין-אונים → כוח". <b>Dromo</b> = דרומדר רץ במסלול (הולכה). הסימפתטי מעלה את שלושתם, הוואגוס מוריד את שלושתם (אבל אינוטרופיה כמעט רק בעליות).</div>
+ </div>
+ <div class="box">
+  <h4>אטרופין ופרופרנולול – הניסוי הפרמקולוגי</h4>
+  <ul>
+   <li><b><i class="en">Atropine</i></b> – חוסם רצפטורים מוסקריניים = <b>מעכב פרה-סימפתטי</b>. נותנים אטרופין → HR <b>עולה</b> מ-~65 ל-~115 (חשיפת הטונוס הסימפתטי). אחריו פרופרנולול → יורד ל-~100 (הקצב הפנימי).</li>
+   <li><b><i class="en">Propranolol</i></b> – חוסם β (לא סלקטיבי) = <b>מעכב סימפתטי</b>. נותנים פרופרנולול קודם → HR יורד מעט (65 → 50); ואז אטרופין → עולה ל-~100.</li>
+   <li><b>המסקנה:</b> ההשפעה של אטרופין לבד (+50) גדולה מזו של פרופרנולול לבד (−15) → <b>הטונוס הוואגלי דומיננטי במנוחה</b>. הסדר לא משנה – בסוף מגיעים לאותו קצב פנימי.</li>
+  </ul>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig"><img src="img/atropine-propranolol.jpg" alt="atropine propranolol" onclick="lb(this)"><figcaption><b>הניסוי:</b> אטרופין מעלה HR הרבה, פרופרנולול מוריד מעט – הוואגוס דומיננטי.</figcaption></figure>
+ <figure class="fig"><img src="img/vagal-symp-hr.jpg" alt="vagal symp" onclick="lb(this)"><figcaption><b>גירוי ואגלי</b> מוריד HR מיד (ACh מתפרק מהר); <b>גירוי סימפתטי</b> מעלה לאט ונשאר (NE נשאר יותר).</figcaption></figure>
+ <figure class="fig"><img src="img/symp-vs-vagal-freq.jpg" alt="interaction" onclick="lb(this)"><figcaption><b>אינטראקציה:</b> ככל שהטונוס הוואגלי גבוה יותר, הסימפתטי משפיע פחות ("accentuated antagonism").</figcaption></figure>
+ <figure class="fig"><img src="img/autonomic-innervation.jpg" alt="innervation" onclick="lb(this)"><figcaption>ואגוס מהמדולה ל-SAN ו-AVN; סימפתטי מחוט השדרה דרך גנגליונים לכל הלב.</figcaption></figure>
+</div>
+
+<h3>9.2 הרפלקסים <span class="key">חובה</span></h3>
+<div class="grid3">
+ <div class="box" style="border-top:4px solid #7b2cbf">
+  <h4>רפלקס הברורצפטורים <i class="en">(Baroreceptor Reflex)</i></h4>
+  <ul>
+   <li><b>חיישנים:</b> רצפטורים למתיחה ב<b>סינוס הקרוטיד</b> (עצב IX, גלוסופרינגיאלי) וב<b>קשת האאורטה</b> (עצב X, ואגוס).</li>
+   <li><b>מרכז:</b> המדולה (NTS → מרכז ואזומוטורי ומרכז ואגלי).</li>
+   <li><b>↑ לחץ דם</b> → ↑מתיחה → ↑ירי → ↑ואגוס, ↓סימפתטי → <b>↓HR, ↓כיווציות, הרחבת כלי דם</b> → הלחץ יורד.</li>
+   <li><b>↓ לחץ דם</b> (עמידה, דימום) → ↓ירי → ↑סימפתטי, ↓ואגוס → <b>↑HR, ↑כיווציות, כיווץ עורקיקים וורידים</b> → הלחץ עולה.</li>
+   <li>הרפלקס <b>המהיר</b> ביותר (שניות) – בקרה רגעית. מתרגל (reset) ללחץ חדש תוך ימים, ולכן לא שולט בלחץ לטווח ארוך (זו הכליה).</li>
+   <li>הרגישות מרבית סביב 100 mmHg; עקומת ה-S בגרף HR מול לחץ.</li>
+  </ul>
+ </div>
+ <div class="box" style="border-top:4px solid #2a9d8f">
+  <h4>רפלקס ביינברידג' <i class="en">(Bainbridge Reflex)</i></h4>
+  <ul>
+   <li><b>חיישנים:</b> רצפטורי מתיחה ב<b>עליות</b> (ובכניסת הוורידים הגדולים).</li>
+   <li><b>↑ לחץ/נפח בעלייה</b> (עירוי, ↑החזר ורידי) → רפלקס ש<b>מגביר את הדופק</b> (↓ואגוס, ↑סימפתטי ל-SAN). המטרה: "לפנות" את העודף במהירות ולא לתת לדם להצטבר בוורידים.</li>
+   <li>בנוסף, מתיחת העליות משחררת <b><i class="en">ANP</i></b> (<i class="en">Atrial Natriuretic Peptide</i>) → <b>שיתון ונטריאורזיס</b> בכליה, הרחבת כלי דם, עיכוב רנין-אלדוסטרון → ירידת נפח הדם.</li>
+   <li><b>ביינברידג' דומיננטי כשנפח הדם גדול; הברורצפטורים דומיננטיים כשנפח הדם קטן.</b> (בעירוי: העליות נמתחות → ביינברידג' מעלה HR; אבל הלחץ העורקי עולה → ברורצפטורים מורידים HR. מי מנצח תלוי בנפח ההתחלתי.)</li>
+  </ul>
+ </div>
+ <div class="box" style="border-top:4px solid #e76f51">
+  <h4>רפלקס הכימורצפטורים <i class="en">(Chemoreceptor Reflex)</i></h4>
+  <ul>
+   <li><b>חיישנים:</b> גופיפי הקרוטיד והאאורטה (היקפיים) – רגישים ל-<b>↓PO₂</b>, ↑PCO₂, ↓pH.</li>
+   <li><b>היפוקסיה</b> → השפעה ראשונית ישירה: גירוי המרכז הוואגלי → <b>↓HR</b> וכיווץ כלי דם היקפי (חיסכון בחמצן). אבל במקביל: ↑נשימה → מתיחת הריאות + ירידת PCO₂ → עיכוב המרכז הוואגלי → <b>↑HR</b>.</li>
+   <li>התוצאה נטו בבני אדם שנושמים חופשי: <b>↑HR</b> (ההשפעה המשנית דרך הנשימה גוברת). אם הנשימה מעוכבת (צלילה, חנק) – ברדיקרדיה.</li>
+   <li>בגרף מההרצאה: ירידה בסטורציה → ירידה ב-HR (ההשפעה הישירה בניסוי מבוקר).</li>
+  </ul>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig"><img src="img/baroreflex-anatomy.jpg" alt="baroreflex" onclick="lb(this)"><figcaption><b>רפלקס הברורצפטורים:</b> קרוטיד (IX) ואאורטה (X) → מדולה → ואגוס לסינוס, סימפתטי ללב ולכלים.</figcaption></figure>
+ <figure class="fig"><img src="img/hr-vs-pressure.jpg" alt="HR vs pressure" onclick="lb(this)"><figcaption><b>HR כנגד לחץ עורקי:</b> עקומת S – רגישות מרבית סביב 100 mmHg, רוויה בקצוות.</figcaption></figure>
+ <figure class="fig"><img src="img/bainbridge.jpg" alt="Bainbridge" onclick="lb(this)"><figcaption><b>ביינברידג':</b> מתיחת העליות בנפח גבוה → המוח → הלב מואץ.</figcaption></figure>
+ <figure class="fig"><img src="img/anp.jpg" alt="ANP" onclick="lb(this)"><figcaption><b>ANP:</b> ↓טונוס סימפתטי, הרחבת כלי דם, נטריאורזיס, עיכוב רנין ואלדוסטרון.</figcaption></figure>
+ <figure class="fig wide"><img src="img/infusion-reflexes.jpg" alt="infusion" onclick="lb(this)"><figcaption><b>עירוי תוך-ורידי:</b> ↑לחץ בעלייה → ביינברידג' (+HR); ↑CO → ↑לחץ עורקי → ברורצפטורים (−HR). התוצאה תלויה בנפח ההתחלתי.</figcaption></figure>
+ <figure class="fig"><img src="img/chemoreflex.jpg" alt="chemoreflex" onclick="lb(this)"><figcaption><b>כימורצפטורים:</b> ראשוני – ↑ואגוס (↓HR); משני – דרך הנשימה (↑HR).</figcaption></figure>
+ <figure class="fig"><img src="img/hr-vs-o2.jpg" alt="HR vs O2" onclick="lb(this)"><figcaption>ירידה בסטורציה → ירידה ב-HR (האפקט הישיר).</figcaption></figure>
+</div>
+<div class="mem"><b>בארו</b> = <b>ב</b>לחץ <b>ע</b>ורקי – "הופכי": לחץ ↑ → דופק ↓. <b>ביינברידג'</b> = <b>ב</b>עלייה – "ישר": נפח ↑ → דופק ↑ (ו-ANP משתין את העודף). <b>כימו</b> = חמצן ↓ → ישירות דופק ↓, אבל הנשימה הופכת ל-↑.</div>
+
+<h3>9.3 השפעת הנשימה: הפרעת קצב סינוס נשימתית <i class="en">(Sinus Arrhythmia)</i></h3>
+<div class="grid2">
+ <div class="box">
+  <ul>
+   <li><b>בשאיפה (inspirium) – הדופק עולה; בנשיפה (expirium) – הדופק יורד.</b> תופעה תקינה, בולטת בצעירים ובספורטאים (טונוס ואגלי גבוה).</li>
+   <li><b>מנגנונים:</b> (1) מרכז הנשימה במדולה "מקרין" עיכוב על המרכז הוואגלי בשאיפה; (2) מתיחת הריאות → רצפטורים → עיכוב ואגלי; (3) ↓לחץ תוך-חזי בשאיפה → ↑החזר ורידי → מתיחת העליות → <b>ביינברידג'</b> → ↑HR; (4) כמה פעימות אחר כך ↑CO → ↑לחץ עורקי → ברורצפטורים → ↓HR (מתאים לנשיפה).</li>
+   <li>באק"ג: מרווחי RR מתקצרים ומתארכים במחזוריות של הנשימה, עם גלי P תקינים.</li>
+  </ul>
+ </div>
+ <div class="figs" style="margin:0">
+  <figure class="fig"><img src="img/sinus-arrhythmia.jpg" alt="sinus arrhythmia" onclick="lb(this)"><figcaption>HR עולה בשאיפה ויורד בנשיפה.</figcaption></figure>
+  <figure class="fig"><img src="img/respiration-hr.jpg" alt="respiration mechanism" onclick="lb(this)"><figcaption>ארבעת המסלולים מהנשימה למרכז הוואגלי.</figcaption></figure>
+ </div>
+</div>
+</section>
+<!-- ============================================================ -->
+<section id="sv" style="--c:var(--ctrl)">
+<h2>10. בקרה על קצב הלב ועל נפח הפעימה <span class="en">Regulation of HR &amp; SV</span></h2>
+
+<div class="box intro">
+ <p><span class="f">CO = SV × HR</span>. <b>HR</b> נקבע ע"י הקוצב ונמצא תחת השפעת האוטונומי (ראינו בפרק 9). <b>SV</b> תלוי ב-preload, afterload ו-inotropy, ואפשר לשנות אותו בשתי דרכים: <b>בקרה מקומית</b> (<i class="en">Intrinsic</i>) – מנגנונים בתוך שריר הלב עצמו, ו<b>בקרה סיסטמית</b> (<i class="en">Extrinsic</i>) – עצבים, הורמונים וגזים בדם.</p>
+</div>
+
+<h3>10.1 בקרה מקומית על SV <i class="en">(Intrinsic Regulation)</i> <span class="key">חובה</span></h3>
+<div class="grid2">
+ <div class="box">
+  <h4>1. עקומת פרנק-סטרלינג (תלוית אורך)</h4>
+  <ul>
+   <li>↑Preload → ↑SV, עד גבול מתיחת הסיבים.</li>
+   <li>↑Afterload → ↓SV – <b>אבל</b> אחרי כמה פעימות הנפח השאריתי שגדל מעלה את ה-preload, פרנק-סטרלינג מפצה ומגיעים לשיווי משקל חדש (SV כמעט חוזר, על חשבון EDV גבוה יותר).</li>
+   <li>↑כיווציות מסיטה את העקומה למעלה-שמאלה → ↑SV – אבל שימוש בחומרים חיצוניים זו כבר בקרה סיסטמית.</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4>2. בקרה תלוית קצב <i class="en">(Rate-Induced Regulation / Bowditch staircase)</i></h4>
+  <ul>
+   <li><b>ככל שמעלים את קצב הלב – גדל הכוח שהלב יוצר</b> (treppe / staircase). באיור: מעבר מ-20 ל-63 גירויים/דקה – הכוח עולה בהדרגה.</li>
+   <li><b>ההסבר – צימוד עירור-כיווץ:</b> יותר AP ליחידת זמן → יותר סידן נכנס לתא, ופחות זמן ל-NCX להוציא אותו → <b>↑סידן תוך-תאי</b> (ב-SR ובציטוזול) → כיווץ חזק יותר. גם <b>זרם הסידן בכל AP גדל</b> בקצבים גבוהים (הגרף: הזרם בפעימה 7 גדול מפעימה 1).</li>
+   <li>זו בקרה <b>מקומית</b> – נצפית גם בלב מבודד.</li>
+  </ul>
+ </div>
+</div>
+<div class="box">
+ <h4>סיכום הבקרה המקומית בדוגמה: פעימה חדרית מוקדמת ופעימת הפיצוי אחריה</h4>
+ <ul>
+  <li><b>הפעימה המוקדמת (A):</b> הגיעה לפני שהחדר הספיק להתמלא → <b>EDV נמוך</b> → לפי פרנק-סטרלינג <b>SV ולחץ נמוכים</b> (באיור: לחץ A קטן). גם הסידן ב-SR לא הספיק להתמלא.</li>
+  <li><b>הפעימה הבאה (B):</b> אחרי ההפסקה המפצה – זמן מילוי ארוך → <b>EDV גבוה</b> (preload ↑) + הסידן הצטבר (post-extrasystolic potentiation) → <b>SV ולחץ גבוהים מהרגיל</b> (באיור: B גבוה מ-C הרגיל).</li>
+  <li>זה בדיוק "הלב מרגיש את הדפיקה החזקה אחרי שהוא 'מדלג'".</li>
+ </ul>
+ <div class="figs">
+  <figure class="fig"><img src="img/premature-ecg.jpg" alt="premature ECG" onclick="lb(this)"><figcaption>אק"ג עם פעימה מוקדמת (החץ) והפסקה מפצה.</figcaption></figure>
+  <figure class="fig"><img src="img/premature-pressure.jpg" alt="premature pressure" onclick="lb(this)"><figcaption>לחץ החדר: A (מוקדמת) נמוך, B (אחרי ההפסקה) גבוה, C רגיל.</figcaption></figure>
+  <figure class="fig"><img src="img/staircase.jpg" alt="staircase" onclick="lb(this)"><figcaption><b>Staircase:</b> העלאת הקצב מ-20 ל-63 מגדילה את הכוח בהדרגה.</figcaption></figure>
+  <figure class="fig"><img src="img/ca-current-rate.jpg" alt="Ca current" onclick="lb(this)"><figcaption>זרם הסידן בפעימה 7 גדול מבפעימה 1 – יותר סידן נכנס בקצב גבוה.</figcaption></figure>
+ </div>
+</div>
+
+<h3>10.2 בקרה סיסטמית על SV <i class="en">(Extrinsic Regulation)</i></h3>
+<div class="grid2">
+ <div class="box">
+  <h4>בקרה עצבית</h4>
+  <ul>
+   <li><b>סימפתטי</b> דרך רצפטורים אדרינרגיים (β<sub>1</sub>) מגביר כיווציות של <b>העלייה ושל החדר</b>. בגרף: גירוי גנגליון stellate → שיא לחץ גבוה יותר ו-<b>dP/dt</b> (קצב עליית הלחץ = מדד לכיווציות) תלול יותר.</li>
+   <li><b>פרה-סימפתטי</b>: גירוי ואגלי מוריד מעט את הלחץ ואת dP/dt – בעיקר דרך העליות ודרך האטה; ההשפעה הישירה על החדר קטנה.</li>
+   <li><b>מנגנון:</b> זרחון חלבונים הקשורים בהכנסה ובהוצאה המהירה של סידן (פרק 6.4). בניסוי ה-isoproterenol (אגוניסט β): ↑ריכוז → ↑זרם סידן (אות aequorin) → ↑כוח, <b>וגם</b> כיווץ קצר יותר.</li>
+  </ul>
+ </div>
+ <div class="box">
+  <h4>בקרה כימית – הורמונים <span class="key">חובה</span></h4>
+  <table>
+   <tr><th>הורמון</th><th>השפעה</th></tr>
+   <tr><td><b>קטכולאמינים</b> (מדולת האדרנל: אדרנלין, נוראדרנלין)</td><td>כמו הסימפתטי אבל דרך הדם, איטי יותר ונמשך יותר: ↑HR, ↑כיווציות, ↑הולכה (β<sub>1</sub>); כיווץ כלי דם (α) / הרחבה בשריר (β<sub>2</sub>)</td></tr>
+   <tr><td><b>גלוקוקורטיקואידים</b> (קורטקס האדרנל)</td><td>"מאפשרים" (permissive) – שומרים על תגובת הלב והכלים לקטכולאמינים</td></tr>
+   <tr><td><b>הורמוני בלוטת התריס</b> (T3/T4)</td><td>↑מספר רצפטורי β, ↑סינתזת מיוזין מהיר ו-SERCA → ↑HR, ↑כיווציות, ↑CO. <b>היפרתירואידיזם</b>: טכיקרדיה, פרפור עליות, אי-ספיקת לב עם תפוקה גבוהה. היפותירואידיזם – ההפך.</td></tr>
+   <tr><td><b>אינסולין</b></td><td>אינוטרופי חיובי (ישיר, לא רק דרך גלוקוז)</td></tr>
+   <tr><td><b>גלוקגון</b></td><td>↑cAMP דרך רצפטור משלו → אינוטרופי וכרונוטרופי חיובי (שימוש קליני בהרעלת חוסמי β)</td></tr>
+   <tr><td><b>הורמון גדילה (GH)</b></td><td>↑כיווציות, היפרטרופיה (אקרומגליה – קרדיומיופתיה)</td></tr>
+   <tr><td><b>ANP</b> (מהעליות)</td><td>לא על הלב ישירות: ↓נפח דם (שיתון), הרחבת כלים → ↓preload ו-↓afterload</td></tr>
+  </table>
+ </div>
+</div>
+<div class="figs">
+ <figure class="fig"><img src="img/stellate-dpdt.jpg" alt="stellate" onclick="lb(this)"><figcaption><b>גירוי סימפתטי (stellate):</b> לחץ גבוה יותר ו-dP/dt תלול – כיווציות ↑.</figcaption></figure>
+ <figure class="fig"><img src="img/vagal-dpdt.jpg" alt="vagal" onclick="lb(this)"><figcaption><b>גירוי ואגלי:</b> לחץ ו-dP/dt מעט נמוכים יותר.</figcaption></figure>
+ <figure class="fig"><img src="img/isoproterenol.jpg" alt="isoproterenol" onclick="lb(this)"><figcaption><b>Isoproterenol</b> (אגוניסט β): יותר סידן, יותר כוח, כיווץ קצר יותר.</figcaption></figure>
+ <figure class="fig"><img src="img/ne-frank-starling.jpg" alt="NE FS" onclick="lb(this)"><figcaption><b>נוראפינפרין</b> מסיט את עקומת פרנק-סטרלינג למעלה: יותר עבודה בכל preload.</figcaption></figure>
+ <figure class="fig"><img src="img/hyperthyroid.jpg" alt="hyperthyroid" onclick="lb(this)"><figcaption><b>היפרתירואידיזם:</b> טכיקרדיה, אי-ספיקה עם תפוקה גבוהה, רעד, הזעה, ירידה במשקל.</figcaption></figure>
+</div>
+
+<h3>10.3 גזים בדם וחמצת <span class="key">חובה</span></h3>
+<div class="grid2">
+ <div class="box" style="border-top:4px solid #4361ee">
+  <h4>חמצן – אפקט דו-שלבי <i class="en">(Biphasic Effect of O₂ / Hypoxia)</i></h4>
+  <ul>
+   <li><b>היפוקסיה קלה → משפרת את ביצועי הלב.</b> המנגנון: גירוי כימורצפטורים → ↑סימפתטי וקטכולאמינים; שחרור מטבוליטים מרחיבי כלים (אדנוזין) → ↑זרימה כלילית. התוצאה: ↑HR, ↑כיווציות, ↑CO.</li>
+   <li><b>היפוקסיה קשה → מדכאת את הלב.</b> אין מספיק ATP למשאבות הסידן ולמיוזין; הצטברות H⁺ ולקטט; ↓כיווציות, הפרעות קצב, ובסוף דום לב.</li>
+   <li>"דו-שלבי": העקומה עולה ואז צונחת.</li>
+  </ul>
+ </div>
+ <div class="box" style="border-top:4px solid #e76f51">
+  <h4>פחמן דו-חמצני וחמצת <i class="en">(Acidosis)</i></h4>
+  <ul>
+   <li>↑PCO₂ → CO₂ + H₂O → H₂CO₃ → H⁺ → <b>חמצת (pH נמוך)</b>. גם חמצת מטבולית (לקטט, קטונים) עושה אותו דבר.</li>
+   <li><b>לחמצת אפקט ישיר המדכא את ביצועי הלב</b> (אינוטרופי שלילי) בשני מנגנונים:
+    <ol>
+     <li><b>↓ כמות הסידן המשתחררת מה-SR</b> (H⁺ פוגע ב-RyR וב-SERCA, מתחרה על אתרי קשירה).</li>
+     <li><b>↓ קישור הסידן לטרופונין</b> – H⁺ מתחרה עם Ca²⁺ על Troponin C → פחות גשרים לכל ריכוז סידן.</li>
+    </ol></li>
+   <li>בנוסף: חמצת מרחיבה עורקיקים (↓TPR) ומעלה אשלגן חוץ-תאי → הפרעות קצב. בקליניקה: בהחייאה, חמצת קשה מורידה את התגובה לקטכולאמינים.</li>
+  </ul>
+ </div>
+</div>
+<div class="figs"><figure class="fig wide"><img src="img/gases-acidosis.jpg" alt="gases acidosis" onclick="lb(this)"><figcaption>השקף מההרצאה: חמצן – אפקט ביפאזי; CO₂ → חמצת → ↓שחרור סידן מה-SR, ↓קישור לטרופונין.</figcaption></figure></div>
+<div class="mem">חמצת = "<b>ח</b>ומצה <b>ח</b>וסמת <b>ח</b>יבור" – H⁺ חוסם את הסידן (שחרור + קישור לטרופונין). היפוקסיה = "קצת טוב (אדרנלין), הרבה רע (אין ATP)".</div>
+
+<h3>10.4 האינטגרציה: CO, TPR, MAP</h3>
+<div class="box">
+ <div class="formula"><span class="f">MAP = CO × TPR = (SV × HR) × TPR</span></div>
+ <table>
+  <tr><th>מצב</th><th>HR</th><th>SV</th><th>CO</th><th>TPR</th><th>MAP</th><th>המנגנון</th></tr>
+  <tr><td><b>מאמץ גופני</b></td><td class="up">↑↑</td><td class="up">↑</td><td class="up">↑↑ (עד 20–25 ל')</td><td class="down">↓ (הרחבה בשריר ע"י מטבוליטים)</td><td class="up">↑ קל (סיסטולי)</td><td>סימפתטי + ↑החזר ורידי (משאבת שרירים) + בקרה מקומית בשריר</td></tr>
+  <tr><td><b>דימום / עמידה</b></td><td class="up">↑</td><td class="down">↓ (↓preload)</td><td class="down">↓</td><td class="up">↑</td><td class="same">נשמר (בתחילה)</td><td>ברורצפטורים → סימפתטי: כיווץ עורקיקים וורידים, ↑HR, ↑כיווציות</td></tr>
+  <tr><td><b>עירוי נוזלים</b></td><td class="up">↑ (ביינברידג')</td><td class="up">↑ (↑preload)</td><td class="up">↑</td><td class="same">↓ (ברורצפטורים)</td><td class="up">↑</td><td>ביינברידג' + ANP; הכליה מפנה את העודף</td></tr>
+  <tr><td><b>חוסם β</b></td><td class="down">↓</td><td class="same">↓ (↓כיווציות), ↑EDV</td><td class="down">↓</td><td class="same">↑ רפלקסיבית</td><td class="down">↓</td><td>חסימת סימפתטי ללב</td></tr>
+  <tr><td><b>מרחיב כלי דם</b> (ניטרופרוסיד)</td><td class="up">↑ רפלקסיבית</td><td class="up">↑ (↓afterload)</td><td class="up">↑</td><td class="down">↓↓</td><td class="down">↓</td><td>↓TPR → ברורצפטורים מפצים חלקית</td></tr>
+  <tr><td><b>היפרתירואידיזם</b></td><td class="up">↑</td><td class="up">↑</td><td class="up">↑</td><td class="down">↓</td><td class="up">↑ סיסטולי, לחץ דופק רחב</td><td>↑רצפטורי β, ↑מטבוליזם</td></tr>
+ </table>
+</div>
+</section>
+<!-- ============================================================ -->
+<section id="clinic" style="--c:var(--accent)">
+<h2>11. פינה קלינית – המקרים מההרצאות <span class="en">Clinical Corner</span></h2>
+<div class="grid2">
+ <div class="box"><h4>פרפור עליות <i class="en">(Atrial Fibrillation)</i></h4><p>חולה במיון עם דופק מהיר ולא סדיר. אק"ג: <b>אין גלי P</b>, QRS צרים, מרווחי RR לא סדירים לחלוטין. פיזיולוגיה: מוקדים/מעגלים רבים בעליות; ה-AVN מעביר חלק מהם – "תגובה חדרית מהירה". אובדן ה-atrial kick → ↓מילוי (~20%). טיפול: חוסם β (האטת AVN), חוסם K⁺ (הארכת ERP – סוטלול), היפוך חשמלי (כולם רפרקטוריים יחד, SAN חוזר ראשון).</p></div>
+ <div class="box"><h4>דיגוקסין <i class="en">(Digoxin)</i></h4><p>מעכב Na⁺/K⁺-ATPase → ↑Na⁺ תוך-תאי → NCX מוציא פחות Ca²⁺ → ↑Ca²⁺ ב-SR → <b>אינוטרופי חיובי</b>. במקביל מגביר טונוס ואגלי → מאט AVN (שימושי בפרפור עליות עם אי-ספיקה). טווח טיפולי צר – היפוקלמיה מגבירה רעילות (פחות K⁺ מתחרה על המשאבה).</p></div>
+ <div class="box"><h4>אי-ספיקת לב ו-S3</h4><p>↓כיווציות → ESPVR שטוח → ↑ESV → ↑EDV (הלב מתרחב) → נשאר על החלק השטוח של פרנק-סטרלינג. ↑לחץ בעלייה ובוורידים → ↑P<sub>c</sub> → <b>בצקת ריאות / רגליים</b>. S3 בתחילת הדיאסטולה (דם נשפך לחדר מורחב). הפיצוי הסימפתטי (↑HR, ↑TPR) מעלה afterload ומחמיר – לכן חוסמי β ומרחיבי כלים עוזרים בטווח הארוך.</p></div>
+ <div class="box"><h4>היצרות מסתם אאורטלי <i class="en">(Aortic Stenosis)</i></h4><p>↑afterload קבוע → הלב בונה לחץ גבוה מאוד (מפל לחץ "gradient" בין החדר לאאורטה) → אוושה סיסטולית (ברנולי: מהירות גבוהה בהיצרות) → היפרטרופיה → חדר קשיח (EDPVR תלול, S4) → לחץ דופק צר, סינקופה במאמץ.</p></div>
+ <div class="box"><h4>היפרתירואידיזם</h4><p>↑רצפטורי β, ↑מטבוליזם → טכיקרדיה, לחץ דופק רחב, פרפור עליות, אי-ספיקה עם תפוקה גבוהה, רעד, הזעה, אקסופתלמוס, ירידה במשקל. חוסמי β מקלים על התסמינים הלבביים.</p></div>
+ <div class="box"><h4>בצקת – לחשוב סטרלינג</h4><p>רגליים נפוחות בערב (↑P<sub>c</sub> מעמידה), בצקת כללית בסינדרום נפרוטי (↓π<sub>c</sub>), נפיחות אדומה חמה בדלקת (↑K<sub>f</sub>), זרוע נפוחה אחרי כריתת בלוטות (חסימת לימפה). בכולם: סינון &gt; ספיגה + ניקוז לימפתי.</p></div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<section id="formulas" style="--c:var(--accent2)">
+<h2>12. דף נוסחאות <span class="en">Formula Sheet</span></h2>
+<div class="grid3">
+ <div class="formula"><span class="f">CO = SV × HR</span><br><small>5–6 ל'/דקה = 70 מ"ל × 70</small></div>
+ <div class="formula"><span class="f">SV = EDV − ESV</span><br><small>70 = 120 − 50</small></div>
+ <div class="formula"><span class="f">EF = SV / EDV</span><br><small>~60%</small></div>
+ <div class="formula"><span class="f">Q = ΔP / R</span><br><small>זרימה = הפרש לחץ / התנגדות</small></div>
+ <div class="formula"><span class="f">R = 8ηL / πr⁴</span><br><small>פואזיי – הרדיוס בחזקת 4</small></div>
+ <div class="formula"><span class="f">Q = v × A</span><br><small>מהירות הפוכה לשטח החתך</small></div>
+ <div class="formula"><span class="f">MAP = CO × TPR</span><br><small>TPR = (MAP − CVP) / CO</small></div>
+ <div class="formula"><span class="f">MAP ≈ P<sub>d</sub> + ⅓ PP</span><br><small>PP = P<sub>s</sub> − P<sub>d</sub></small></div>
+ <div class="formula"><span class="f">C = ΔV / ΔP</span><br><small>היענות; ורידים ×20 מעורקים</small></div>
+ <div class="formula"><span class="f">P + ½ρv² + ρgh = const</span><br><small>ברנולי – מהירות ↑ ⇒ לחץ ↓</small></div>
+ <div class="formula"><span class="f">J = P·S·ΔC</span><br><small>פיק – דיפוזיה</small></div>
+ <div class="formula"><span class="f">NF = K<sub>f</sub>[(P<sub>c</sub>−P<sub>i</sub>) − σ(π<sub>c</sub>−π<sub>i</sub>)]</span><br><small>סטרלינג – פילטרציה</small></div>
+ <div class="formula"><span class="f">π = σRTΔC</span><br><small>לחץ אונקוטי</small></div>
+ <div class="formula"><span class="f">QTc = QT / √RR</span><br><small>≤ 0.40 ש'</small></div>
+ <div class="formula"><span class="f">E<sub>es</sub> = שיפוע ESPVR</span><br><small>מדד הכיווציות</small></div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<section id="mems" style="--c:var(--mem)">
+<h2>13. כל הטריקים במקום אחד <span class="en">Memory Aids</span></h2>
+<div class="grid2">
+ <div class="box">
+  <ul>
+   <li><b>סדר ההולכה:</b> <i class="en">SA → AV → His → Purkinje</i> – "<b>S</b>תם <b>A</b>ני <b>H</b>ולך <b>P</b>ה".</li>
+   <li><b>מהיר = Na, איטי = Ca.</b> ה-plateau = Ca נכנס מול K יוצא.</li>
+   <li><b>ERP</b> = אין תגובה. <b>RRP</b> = רק גירוי חזק.</li>
+   <li><b>I<sub>f</sub></b> "מצחיק" כי נפתח בהיפרפולריזציה; סימפתטי ↑, ואגוס ↓.</li>
+   <li><b>P</b> = פרוזדורים, <b>QRS</b> = חדרים נדלקים, <b>T</b> = חדרים נכבים, <b>PR</b> = פקק ב-AVN (0.12–0.20), <b>ST</b> = שקט.</li>
+   <li><b>פרפור עליות:</b> אין P + לא סדיר לחלוטין. <b>חסם AV 1:</b> PR &gt; 0.20. <b>חסם AV 2:</b> P בלי QRS.</li>
+   <li><b>מסתמים:</b> מאאמ – מיטרלי נסגר (S1), אאורטלי נפתח, אאורטלי נסגר (S2), מיטרלי נפתח. בין "סגור-סגור" – איזו-וולומטרי.</li>
+   <li><b>וויגרס מהבוחן:</b> A = מיטרלי נסגר, B = אאורטלי נפתח, C = אאורטלי נסגר, D = מיטרלי נפתח; 1 = IVC, 2 = פליטה, 3 = IVR, 4–5 מילוי, 6 = סיסטולת עלייה.</li>
+   <li><b>S3</b> = שפיכה לחדר רפוי (אי-ספיקה, תחילת דיאסטולה). <b>S4</b> = עלייה דוחפת לחדר קשיח (סוף דיאסטולה).</li>
+  </ul>
+ </div>
+ <div class="box">
+  <ul>
+   <li><b>P-A-C:</b> Preload ↑SV, Afterload ↓SV, Contractility ↑SV.</li>
+   <li><b>PV loop מהבוחן:</b> A = מיטרלי נפתח (ESV), C = מיטרלי נסגר (EDV = preload), D = אאורטלי נפתח, E = afterload, F = אאורטלי נסגר. SV = D–F (או C–A).</li>
+   <li><b>Preload</b> מזיז ימינה, <b>Afterload</b> למעלה, <b>Inotropy</b> שמאלה ומשנה שיפוע ESPVR. רק אינוטרופיה משנה את השיפוע.</li>
+   <li><b>פרנק-סטרלינג:</b> יותר נכנס – יותר יוצא. EDPVR = פסיבי = היענות; ESPVR = אקטיבי = כיווציות.</li>
+   <li><b>r⁴:</b> הכפלת רדיוס = פי 16 זרימה. השליטה = עורקיקים.</li>
+   <li><b>MAP</b> = דיאסטולי + שליש דופק ≈ 93. MAP = CO × TPR כמו V = I × R.</li>
+   <li><b>סטרלינג:</b> P<sub>c</sub> דוחף החוצה (35→15), π<sub>c</sub> מושך פנימה (25). 90% חוזר, 10% לימפה. בצקת = ↑P<sub>c</sub> / ↓אלבומין / ↑חדירות / חסימת לימפה.</li>
+   <li><b>Chrono</b> = קצב, <b>Ino</b> = כוח, <b>Dromo</b> = הולכה. ואגוס דומיננטי במנוחה (אטרופין +50, פרופרנולול −15).</li>
+   <li><b>בארו</b> הופכי (לחץ ↑ → HR ↓), <b>ביינברידג'</b> ישר (נפח עלייה ↑ → HR ↑ + ANP), <b>כימו</b> ישיר ↓HR אבל דרך הנשימה ↑HR.</li>
+   <li><b>שאיפה</b> – דופק עולה; <b>נשיפה</b> – יורד.</li>
+   <li><b>חמצן</b> דו-שלבי: קצת היפוקסיה משפרת, הרבה מדכאת. <b>חמצת</b> חוסמת סידן (שחרור + טרופונין).</li>
+  </ul>
+ </div>
+</div>
+<p style="text-align:center;margin-top:20px"><a class="cta" href="quiz.html">לתרגול – שאלות מהבחנים ושאלות נוספות →</a></p>
+<p style="font-size:12px;color:var(--muted);text-align:center">נבנה מרשימות המושגים של הקורס, ממצגות ההרצאות (פרופ' בן אסא, 2026), מבוחן הבוקר (04.12) ומבוחן 1. האיורים מהמצגות (Guyton &amp; Hall; Koeppen &amp; Stanton, Berne &amp; Levy) – לשימוש לימודי אישי בלבד. ההסברים נכתבו לצורכי לימוד ואינם תחליף לחומר הקורס.</p>
+</section>
+
+</main>
+<div id="lb" onclick="this.style.display='none'"><img id="lbimg" src="" alt=""><div id="lbcap"></div></div>
+<script>
+function lb(img){const l=document.getElementById('lb');document.getElementById('lbimg').src=img.src;const c=img.closest('figure')?.querySelector('figcaption');document.getElementById('lbcap').innerHTML=c?c.innerHTML:'';l.style.display='flex';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lb').style.display='none';});
+</script>
+</body>
+</html>
